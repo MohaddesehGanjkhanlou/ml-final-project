@@ -1,0 +1,81 @@
+{
+  "anomaly_val_calib_point_metrics": {
+    "healthy_first_trigger_fraction": 0.0,
+    "mean_early_component": 0.4166666666666667,
+    "mean_late_component": 0.13333333333333333,
+    "mean_lead_time_if_alerted": 43.0,
+    "mean_miss_component": 0.0,
+    "mean_total_cost": 0.55,
+    "median_lead_time_if_alerted": 43.0,
+    "miss_rate": 0.0
+  },
+  "artifact_type": "fd003_development_readiness",
+  "artifact_version": 1,
+  "bootstrap": {
+    "confidence_interval": "percentile_95",
+    "draws": 1000,
+    "draws_path": "artifacts/results/FD003_task6_selected_policy_bootstrap_draws.csv",
+    "resampling_unit": "engine_id",
+    "seed": 42,
+    "summary_path": "artifacts/results/FD003_task6_selected_policy_bootstrap_ci.csv"
+  },
+  "integrity": {
+    "artifact_hashes": {
+      "anomaly_policy_bundle": "5c180962220766359600cf816f63e2815bf669d000681387e9409a091ae2dde4",
+      "anomaly_policy_selection": "703ecc1947b68a11658aac02e2e638e551d10c30266191e67e3786a79c86f54b",
+      "classification_bundle": "feb6c58419ed6aa6e604ba43af94b35b82dd3c2e628af16d7e7b696cab6120a3",
+      "classification_threshold_contract": "6fc773d35bd30e0ec02bb2cd8d2c736efc2280be7f64922d3eec6ca77b6904a9",
+      "development_protocol": "488e8477f015c7e25f3deff4ecbd1c10b732d7e4b1260e2006ef43838eb90eaa",
+      "regression_bundle": "07b1ff9c4c812d5933a946f0501040e6878d0460d872771ef0825618c415cf07",
+      "rul_conformal_contract": "4de22bd94ffbbe23975e9f777275735b01f3487a9177b850f77fcc7092d039fb",
+      "selected_anomaly_engine_results": "b74f7d1c424275a0240d2f05a21b4405da56f11eb5a00f41e5298ae587d837c1"
+    },
+    "executed_checks": 37,
+    "failed_checks": 0
+  },
+  "limitations": [
+    "FD003 latent groups are descriptive degradation groups, not physical fault-mode labels.",
+    "Regression conformal intervals are calibrated for a capped RUL target with cap=100 cycles.",
+    "Anomaly policy selection used only 10 VAL-CALIB engines; uncertainty is reported with engine bootstrap."
+  ],
+  "official_test_gate": {
+    "content_accessed_in_this_cell": false,
+    "content_files_read": [],
+    "evaluation_authorized": false,
+    "expected_test_engines": 100,
+    "status": "SEALED"
+  },
+  "selected_models": {
+    "anomaly": {
+      "candidate_id": "iforest_n200_ms_0p5",
+      "cutoff": 0.99,
+      "family": "iforest",
+      "m": 5,
+      "n": 10,
+      "reference_type": "pooled"
+    },
+    "classification": {
+      "calibration_method": "horizon-specific Platt scaling",
+      "horizons": [
+        10,
+        20,
+        30
+      ],
+      "monotonicity_rule": "cumulative maximum in horizon order 10,20,30",
+      "thresholds": {
+        "10": 0.15202568907053304,
+        "20": 0.052137494213097275,
+        "30": 0.07738555983584257
+      }
+    },
+    "regression": {
+      "cap": 100,
+      "include_settings": true,
+      "model_name": "random_forest",
+      "representation": "window",
+      "window": 30
+    }
+  },
+  "status": "READY_FOR_OFFICIAL_TEST_GATE_REVIEW",
+  "subset": "FD003"
+}

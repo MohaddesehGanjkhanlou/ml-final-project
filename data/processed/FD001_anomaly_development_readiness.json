@@ -1,0 +1,95 @@
+{
+  "artifact_type": "anomaly_development_readiness",
+  "artifact_version": 1,
+  "integrity": {
+    "artifact_hashes": {
+      "candidate_manifest": {
+        "path": "data/processed/FD001_anomaly_train_candidates_manifest.json",
+        "sha256": "708e0bc66bd55c03065e3eabee4182ee1cbf6e71d6eb9969502b374b6323e788",
+        "size_bytes": 3211
+      },
+      "frozen_policy_contract": {
+        "path": "data/processed/FD001_task6_policy_contract.json",
+        "sha256": "b60072c985ae5ecc400e292c71eb3b9fcd63551da7956e8a3e46267fc753c016",
+        "size_bytes": 6503
+      },
+      "preprocessing_bundle": {
+        "path": "artifacts/models/FD001_anomaly_preprocessing_bundle.joblib",
+        "sha256": "c3f841a3f8bb21cf5921ba5d0cd630d49e773a97b334191082cf7fbbbb86a8ce",
+        "size_bytes": 3217
+      },
+      "selected_family_bundle": {
+        "path": "artifacts/models/FD001_anomaly_selected_family_bundle.joblib",
+        "sha256": "001c1f43ada038f4541876a8eaa595a62d540ffbb548b34240cc781c3dec29e1",
+        "size_bytes": 11736691
+      },
+      "selected_policy_bootstrap_ci": {
+        "path": "artifacts/results/FD001_task6_selected_policy_bootstrap_ci.csv",
+        "sha256": "a73f8b38deebb1e954afedcb1e65608a2bf97168d06850ab487fce984bfd88b4",
+        "size_bytes": 819
+      },
+      "selected_policy_bundle": {
+        "path": "artifacts/models/FD001_anomaly_policy_bundle.joblib",
+        "sha256": "350270587ae7f544d7ee1957b60d2992baed81b061689c30bdbf673ddcaa0921",
+        "size_bytes": 11738564
+      },
+      "selected_policy_engine_results": {
+        "path": "artifacts/results/FD001_task6_selected_policy_engine_results.csv",
+        "sha256": "de912e073551555d8f110c555d01ccb53d4f8dd421b7657d0e588ace1ce8961b",
+        "size_bytes": 1845
+      },
+      "selected_policy_result": {
+        "path": "data/processed/FD001_task6_selected_anomaly_policy.json",
+        "sha256": "d6eeb5b1fb6481cebe4b1a2b4b9988916b80a42e8cf57e9f4bf1d6f6735adedc",
+        "size_bytes": 6415
+      },
+      "selected_policy_traces": {
+        "path": "artifacts/results/FD001_task6_selected_policy_traces.csv",
+        "sha256": "78f2139fe5620cac2a8fae99d7a8928ad6b2db08ed4b273918897e2c04f60281",
+        "size_bytes": 70134
+      },
+      "val_calib_timelines": {
+        "path": "artifacts/results/FD001_anomaly_val_calib_selected_timelines.csv",
+        "sha256": "20a9223dbb91f77e0dd1731174dd57f09b920ee153766ed0b898e7f76f695330",
+        "size_bytes": 735327
+      }
+    },
+    "bootstrap_checks": "PASS",
+    "frozen_contract_sha256": "b60072c985ae5ecc400e292c71eb3b9fcd63551da7956e8a3e46267fc753c016",
+    "per_engine_policy_checks": "PASS",
+    "trace_reconstruction_checks": "PASS"
+  },
+  "limitations": [
+    "VAL-CALIB contains only 10 engines.",
+    "VAL-CALIB diagnostics are not independent test results.",
+    "Zero observed misses does not prove zero population miss rate."
+  ],
+  "official_test_gate": {
+    "accessed_in_this_cell": false,
+    "evaluation_authorized": false,
+    "status": "SEALED"
+  },
+  "selected_policy": {
+    "candidate_id": "lof_k50",
+    "cutoff": 0.99,
+    "family": "lof",
+    "persistence": {
+      "alert_latched": true,
+      "cycle_gap_reset": true,
+      "m": 5,
+      "n": 10
+    },
+    "reference_type": "pooled"
+  },
+  "status": "READY_FOR_OFFICIAL_TEST_GATE_REVIEW",
+  "subset": "FD001",
+  "val_calib_diagnostics": {
+    "maximum_lead_time": 91.0,
+    "mean_lead_time": 57.7,
+    "mean_total_cost": 0.6833333333333333,
+    "median_lead_time": 55.5,
+    "minimum_lead_time": 30.0,
+    "missed_engines": 0,
+    "n_engines": 10
+  }
+}

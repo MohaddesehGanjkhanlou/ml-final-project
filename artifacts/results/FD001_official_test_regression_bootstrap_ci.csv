@@ -1,0 +1,9 @@
+evaluation_scope,resampling_unit,metric,point_estimate,bootstrap_mean,ci_95_lower,ci_95_upper,valid_draws,invalid_draws
+official_test_final_snapshot,engine_id,PHM_score_mean,4.140267937234389,4.131004808091602,2.7905055128152427,5.654886455252954,1000,0
+official_test_final_snapshot,engine_id,PHM_score_sum,414.02679372343897,413.1004808091603,279.0505512815243,565.4886455252954,1000,0
+official_test_final_snapshot,engine_id,MAE,13.069521773983011,13.046270646993975,10.740872438677467,15.452722250488906,1000,0
+official_test_final_snapshot,engine_id,RMSE,17.90437628851029,17.82389760658411,14.943845024442435,20.69257388955962,1000,0
+official_test_final_snapshot,engine_id,R2,0.8143654331047523,0.8106979860048443,0.742963805479006,0.865100408400105,1000,0
+official_test_final_snapshot,engine_id,conformal_coverage,0.74,0.74073,0.65,0.82,1000,0
+official_test_final_snapshot,engine_id,conformal_average_width,35.87267685473799,35.899020782737,35.30446076721177,36.37561324015173,1000,0
+official_test_final_snapshot,engine_id,mean_signed_error_pred_minus_true,-7.424870651695252,-7.430079335646303,-10.597001204605801,-4.238039535753602,1000,0

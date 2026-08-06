@@ -1,0 +1,86 @@
+{
+  "artifact_type": "integrated_maintenance_recommendation_contract",
+  "artifact_version": 1,
+  "created_at_utc": "2026-08-06T11:54:40.099002+00:00",
+  "governance": {
+    "anomaly_policy_reselection_performed": false,
+    "creation_phase": "post_official_test_unseal_system_integration",
+    "independent_preregistered_combined_policy": false,
+    "interpretation": "Component rules were frozen before Test. Their deterministic combination is post-unseal integration and was not optimized on Test outcomes.",
+    "model_refitting_performed": false,
+    "probability_recalibration_performed": false,
+    "test_outcome_optimization_performed": false,
+    "threshold_reselection_performed": false
+  },
+  "input_contract": {
+    "anomaly": {
+      "alert_latching": true,
+      "candidate_id": "iforest_n200_ms_0p5",
+      "cutoff": 0.99,
+      "family": "iforest",
+      "m": 5,
+      "n": 10
+    },
+    "classification": {
+      "decision_rule": "mono_probability >= frozen_threshold",
+      "horizons": [
+        10,
+        20,
+        30
+      ],
+      "thresholds": {
+        "10": 0.15202568907053304,
+        "20": 0.052137494213097275,
+        "30": 0.07738555983584257
+      }
+    },
+    "regression": {
+      "inspection": 30,
+      "lower_bound": "conformal_lower",
+      "point_estimate": "predicted_RUL",
+      "urgent_stop": 10
+    }
+  },
+  "official_test_inputs_used_to_create_rule": [],
+  "priority_order": [
+    "STOP",
+    "INSPECT",
+    "CONTINUE"
+  ],
+  "recommendation_levels": [
+    "CONTINUE",
+    "INSPECT",
+    "STOP"
+  ],
+  "rules": {
+    "CONTINUE": [
+      "STOP is false and INSPECT is false"
+    ],
+    "INSPECT": [
+      "classification_decision_h20 == 1",
+      "classification_decision_h30 == 1",
+      "conformal_lower <= 30",
+      "persistent_anomaly_alert == 1"
+    ],
+    "STOP": [
+      "classification_decision_h10 == 1",
+      "predicted_RUL <= 10"
+    ]
+  },
+  "source_artifacts": {
+    "anomaly_policy_bundle": {
+      "path": "artifacts/models/FD003_anomaly_policy_bundle.joblib",
+      "sha256": "5c180962220766359600cf816f63e2815bf669d000681387e9409a091ae2dde4"
+    },
+    "classification_bundle": {
+      "path": "artifacts/models/FD003_classification_bundle.joblib",
+      "sha256": "feb6c58419ed6aa6e604ba43af94b35b82dd3c2e628af16d7e7b696cab6120a3"
+    },
+    "regression_bundle": {
+      "path": "artifacts/models/FD003_regression_bundle.joblib",
+      "sha256": "07b1ff9c4c812d5933a946f0501040e6878d0460d872771ef0825618c415cf07"
+    }
+  },
+  "status": "FROZEN_FOR_APPLICATION_INTEGRATION",
+  "subset": "FD003"
+}

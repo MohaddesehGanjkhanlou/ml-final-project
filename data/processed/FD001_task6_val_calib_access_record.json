@@ -1,0 +1,15 @@
+{
+  "frozen_contract": "data/processed/FD001_task6_policy_contract.json",
+  "frozen_contract_sha256": "b60072c985ae5ecc400e292c71eb3b9fcd63551da7956e8a3e46267fc753c016",
+  "model_refitting": false,
+  "official_test_accessed": false,
+  "official_test_status": "SEALED",
+  "persistence_selection": false,
+  "record_version": 1,
+  "selected_families": 4,
+  "stage": "val_calib_scoring",
+  "subset": "FD001",
+  "threshold_selection": false,
+  "val_calib_engines": 10,
+  "val_calib_rows": 2026
+}

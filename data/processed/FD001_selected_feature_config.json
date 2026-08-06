@@ -1,0 +1,22 @@
+{
+  "absolute_PHM_improvement": 1.0599245551093923,
+  "baseline_PHM_mean_dev": 3.772733044219504,
+  "calibration_role": "official_train/val_calib",
+  "conditional_alpha": 0.1,
+  "conditional_cap": 100,
+  "conditional_model": "ridge",
+  "fit_role": "official_train/train",
+  "include_settings": false,
+  "official_test_status": "sealed",
+  "primary_metric": {
+    "direction": "lower_is_better",
+    "name": "tune_PHM_mean_dev",
+    "value": 2.712808489110112
+  },
+  "relative_PHM_improvement_percent": 28.09434281954788,
+  "representation": "window",
+  "schema_version": 1,
+  "selection_role": "official_train/val_tune",
+  "subset": "FD001",
+  "window": 30
+}

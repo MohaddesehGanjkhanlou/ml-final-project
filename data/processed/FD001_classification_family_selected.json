@@ -1,0 +1,83 @@
+{
+  "subset": "FD001",
+  "artifact_type": "selected_raw_failure_horizon_classifiers",
+  "primary_selection_metric": "VAL-TUNE PR-AUC",
+  "tie_breaker": "lower raw Brier score",
+  "fit_partition": "train",
+  "selection_partition": "val_tune",
+  "calibration_partition": "val_calib",
+  "official_test_status": "sealed",
+  "bundle_path": "artifacts/models/FD001_classification_raw_bundle.joblib",
+  "bundle_sha256": "f726ddf38dc00f815cf9d39d9dfc001a32a82087d7b5db02947bd4af5d169bce",
+  "selected_models": {
+    "10": {
+      "horizon": 10,
+      "model_family": "logistic",
+      "model_parameters": {
+        "C": 10.0,
+        "class_weight": "balanced"
+      },
+      "feature_config": {
+        "representation": "window",
+        "window": 30,
+        "include_settings": true,
+        "scaled": true,
+        "n_features": 123
+      },
+      "fit_partition": "train",
+      "selection_partition": "val_tune",
+      "primary_metric": "PR_AUC",
+      "tune_PR_AUC": 0.9687134873218175,
+      "tune_Brier_raw": 0.023449529030778817,
+      "tune_prevalence": 0.053684724255734506,
+      "fit_time_seconds": 0.022107840999524342,
+      "inference_us_per_row": 0.32081210326590076
+    },
+    "20": {
+      "horizon": 20,
+      "model_family": "logistic",
+      "model_parameters": {
+        "C": 0.1,
+        "class_weight": null
+      },
+      "feature_config": {
+        "representation": "window",
+        "window": 30,
+        "include_settings": false,
+        "scaled": true,
+        "n_features": 121
+      },
+      "fit_partition": "train",
+      "selection_partition": "val_tune",
+      "primary_metric": "PR_AUC",
+      "tune_PR_AUC": 0.9830880202512741,
+      "tune_Brier_raw": 0.0106457617170779,
+      "tune_prevalence": 0.10248901903367497,
+      "fit_time_seconds": 0.025410992000615806,
+      "inference_us_per_row": 0.2848626158254236
+    },
+    "30": {
+      "horizon": 30,
+      "model_family": "logistic",
+      "model_parameters": {
+        "C": 0.1,
+        "class_weight": null
+      },
+      "feature_config": {
+        "representation": "window",
+        "window": 30,
+        "include_settings": true,
+        "scaled": true,
+        "n_features": 123
+      },
+      "fit_partition": "train",
+      "selection_partition": "val_tune",
+      "primary_metric": "PR_AUC",
+      "tune_PR_AUC": 0.9870208278251931,
+      "tune_Brier_raw": 0.014023696690596861,
+      "tune_prevalence": 0.15129331381161543,
+      "fit_time_seconds": 0.0242219350002415,
+      "inference_us_per_row": 0.6377176675661612
+    }
+  }
+}

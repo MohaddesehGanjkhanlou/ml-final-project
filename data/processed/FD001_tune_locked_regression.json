@@ -1,0 +1,22 @@
+{
+  "subset": "FD001",
+  "status": "tune-locked regression configuration (NOT fully final model)",
+  "model": "ridge",
+  "model_params": {
+    "alpha": 0.1
+  },
+  "feature_config": {
+    "representation": "window",
+    "window": 10,
+    "include_settings": false
+  },
+  "cap": 100,
+  "selected_on": "val_tune (20 engines); calib engines excluded from ranking",
+  "hparam_provenance": "RF/GBR non-size hparams chosen under window-15/cap=100 screening, transferred to tune-selected window",
+  "protocol_note": "retrospective amendment; all 30 val engines examined earlier; calib engines reserved for conformal quantiles only; final coverage/perf on sealed official test",
+  "tune_PHM_by_model": {
+    "ridge": 3.0465346569642935,
+    "rf": 4.620315382771022,
+    "gbr": 4.597595790641307
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "subset": "FD001",
+  "partition": "val_calib",
+  "point_model": "gbr",
+  "target": "RUL capped at 100 cycles",
+  "nominal_pointwise_coverage": 0.9,
+  "pointwise_quantile": 18.413393217043065,
+  "calibration_empirical_coverage": 0.9007897334649556,
+  "calibration_average_width_cycles": 28.438217496379444,
+  "n_calibration_rows": 2026,
+  "n_calibration_engines": 10,
+  "fraction_engines_meeting_nominal_coverage": 0.5,
+  "engine_simultaneous_sensitivity_quantile": 43.51579772885148,
+  "interpretation": [
+    "Coverage reported here is measured on the same VAL-CALIB partition used to estimate the quantile.",
+    "It is not independent test coverage; independent evaluation remains deferred to the sealed test set.",
+    "Rows within an engine are temporally dependent, so the effective independent sample size is closer to the number of engines than to the number of rows.",
+    "The engine-level maximum-residual quantile is a conservative sensitivity diagnostic, not the deployed pointwise interval."
+  ]
+}

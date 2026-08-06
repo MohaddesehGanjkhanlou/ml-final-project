@@ -1,0 +1,44 @@
+{
+  "artifact_inventory": {
+    "manifest_path": "artifacts/results/FD001_functional_artifact_manifest.csv",
+    "manifest_sha256": "e203bd830285e45b76096a25d91730351e3229ec28505bf80664b5651191f4f3",
+    "required_artifacts": 46,
+    "verified_nonempty_artifacts": 46
+  },
+  "artifact_type": "subset_functional_completion_readiness",
+  "artifact_version": 1,
+  "completed_components": {
+    "anomaly_detection": true,
+    "classification": true,
+    "dashboard_ready_data_contract": true,
+    "engine_bootstrap_uncertainty": true,
+    "integrated_recommendations": true,
+    "official_test_evaluation": true,
+    "regression": true
+  },
+  "completion": {
+    "failed_checks": 0,
+    "fraction": 1.0,
+    "passed_checks": 69,
+    "percent": 100.0,
+    "total_checks": 69
+  },
+  "known_limitations_retained": [
+    "Regression conformal coverage on the primary Official-Test final-snapshot scope is below the nominal 0.90 target.",
+    "Anomaly no-alert engines are censored at the Official-Test observation end and are not confirmed misses.",
+    "The integrated CONTINUE/INSPECT/STOP rule was documented post-unseal without Test optimization and is not claimed as a preregistered combined policy."
+  ],
+  "project_level_remaining_work": [
+    "Stage 2 multi-fault subset FD003",
+    "Bonus multi-condition multi-fault subset FD004",
+    "interactive application implementation",
+    "deployment parity validation",
+    "final comparative master table",
+    "final report and presentation",
+    "post-completion optimization and cleanup"
+  ],
+  "project_overall_status": "IN_PROGRESS_AFTER_FD001_STAGE_COMPLETION",
+  "scope": "FD001_STAGE_1",
+  "status": "FUNCTIONALLY_COMPLETE",
+  "subset": "FD001"
+}

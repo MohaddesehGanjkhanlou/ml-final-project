@@ -1,0 +1,4 @@
+horizon,model,C,class_weight,include_settings,baseline_n_features,baseline_tune_PR_AUC,best_window,window_n_features,window_tune_PR_AUC,PR_AUC_absolute_improvement,PR_AUC_relative_improvement_percent
+10,logistic,10.0,balanced,True,17,0.9441297425012598,30,123,0.9687134873218175,0.024583744820557696,2.6038523853118516
+20,logistic,0.1,none,False,15,0.9615072745363507,30,121,0.983082720321703,0.02157544578535231,2.2439191420321003
+30,logistic,0.1,none,True,17,0.9660853911461804,30,123,0.9870208278251931,0.020935436679012653,2.167037911025079

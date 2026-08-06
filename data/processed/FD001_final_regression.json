@@ -1,0 +1,71 @@
+{
+  "bundle": {
+    "bytes": 192588,
+    "path": "artifacts/models/FD001_regression_bundle.joblib",
+    "reload_prediction_parity": true,
+    "sha256": "091009e2b1aff9b77ea0378d91105c6715f311c2cc31fe2a99a452843fbac9a6"
+  },
+  "comparison_metrics": {
+    "gbr": {
+      "MAE": 8.235245320244925,
+      "PHM_mean": 1.7785198516685918,
+      "R2": 0.8656019529653024,
+      "RMSE": 10.68823371654517,
+      "fit_time_seconds": 0.03135635699982231,
+      "inference_us_per_row": 4.791381405602837,
+      "near_failure_MAE": 3.9577089220631536
+    },
+    "rf": {
+      "MAE": 8.282130481323613,
+      "PHM_mean": 2.005285983555256,
+      "R2": 0.853808057541076,
+      "RMSE": 11.147338296207097,
+      "fit_time_seconds": 0.07431708900003287,
+      "inference_us_per_row": 17.237108589663396,
+      "near_failure_MAE": 4.120110699757957
+    },
+    "ridge": {
+      "MAE": 10.492410663424398,
+      "PHM_mean": 2.712808489110112,
+      "R2": 0.7983640848511468,
+      "RMSE": 13.09162052140701,
+      "fit_time_seconds": 0.02244238500134088,
+      "inference_us_per_row": 0.8105451439763204,
+      "near_failure_MAE": 8.419772402171855
+    }
+  },
+  "data_roles": {
+    "calibration": "official_train/val_calib",
+    "final_evaluation": "official_test_sealed",
+    "fit": "official_train/train",
+    "selection": "official_train/val_tune"
+  },
+  "feature_config": {
+    "include_settings": false,
+    "n_features": 121,
+    "representation": "window",
+    "scaled_features": false,
+    "window": 30
+  },
+  "random_seed": 42,
+  "schema_version": 1,
+  "selected_model": "gbr",
+  "selected_parameters": {
+    "learning_rate": 0.1,
+    "max_depth": 3,
+    "n_estimators": 300
+  },
+  "selection_metric": {
+    "direction": "lower_is_better",
+    "evaluation_region": "uncapped_RUL <= 100",
+    "name": "tune_PHM_mean_dev",
+    "value": 1.7785198516685918
+  },
+  "status": "selected_on_val_tune; conformal_calibration_and_official_test_evaluation_pending",
+  "subset": "FD001",
+  "target": {
+    "cap": 100,
+    "name": "RUL",
+    "unit": "cycles"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "subset": "FD001",
+  "task": "failure_horizon_classification",
+  "horizons": [
+    10,
+    20,
+    30
+  ],
+  "fit_partition": "train",
+  "selection_partition": "val_tune",
+  "calibration_partition": "val_calib",
+  "official_test_status": "sealed",
+  "primary_selection_metric": "PR_AUC",
+  "tie_breaker": "lower raw Brier score",
+  "selected_logistic_models": {
+    "10": {
+      "model": "logistic",
+      "representation": "window",
+      "window": 30,
+      "include_settings": true,
+      "class_weight": "balanced",
+      "C": 10.0,
+      "n_features": 123,
+      "selection_partition": "val_tune",
+      "primary_metric": "PR_AUC",
+      "tune_PR_AUC": 0.9687134873218175,
+      "tune_Brier_raw": 0.023449529030778817
+    },
+    "20": {
+      "model": "logistic",
+      "representation": "window",
+      "window": 30,
+      "include_settings": false,
+      "class_weight": null,
+      "C": 0.1,
+      "n_features": 121,
+      "selection_partition": "val_tune",
+      "primary_metric": "PR_AUC",
+      "tune_PR_AUC": 0.983082720321703,
+      "tune_Brier_raw": 0.010646069645510679
+    },
+    "30": {
+      "model": "logistic",
+      "representation": "window",
+      "window": 30,
+      "include_settings": true,
+      "class_weight": null,
+      "C": 0.1,
+      "n_features": 123,
+      "selection_partition": "val_tune",
+      "primary_metric": "PR_AUC",
+      "tune_PR_AUC": 0.9870208278251931,
+      "tune_Brier_raw": 0.014023744683206848
+    }
+  }
+}

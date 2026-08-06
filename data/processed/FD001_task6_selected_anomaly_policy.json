@@ -1,0 +1,266 @@
+{
+  "frozen_contract_path": "data/processed/FD001_task6_policy_contract.json",
+  "frozen_contract_sha256": "b60072c985ae5ecc400e292c71eb3b9fcd63551da7956e8a3e46267fc753c016",
+  "manual_override": false,
+  "official_test_accessed": false,
+  "official_test_status": "SEALED",
+  "overall_policy": {
+    "candidate_id": "lof_k50",
+    "cutoff": 0.99,
+    "family": "lof",
+    "healthy_first_trigger_fraction": 0.0,
+    "m": 5,
+    "maximum_lead_time": 91.0,
+    "mean_early_component": 0.6833333333333333,
+    "mean_late_component": 0.0,
+    "mean_lead_time": 57.7,
+    "mean_miss_component": 0.0,
+    "mean_raw_early_burden": 27.7,
+    "mean_raw_late_delay": 0.0,
+    "mean_total_cost": 0.6833333333333333,
+    "median_lead_time": 55.5,
+    "minimum_lead_time": 30.0,
+    "miss_rate": 0.0,
+    "missed_engines": 0,
+    "n": 10,
+    "n_engines": 10,
+    "reference_type": "pooled",
+    "selection_eligible": true,
+    "trigger_at_failure_only_engines": 0
+  },
+  "overall_selection_audit": {
+    "fewest_missed_engines": [
+      31
+    ],
+    "frozen_family_order": [
+      31
+    ],
+    "highest_cutoff": [
+      31
+    ],
+    "lowest_healthy_trigger_fraction": [
+      31
+    ],
+    "lowest_mean_early_burden": [
+      31
+    ],
+    "lowest_mean_late_delay": [
+      31
+    ],
+    "lowest_mean_total_cost": [
+      31
+    ],
+    "simplest_persistence": [
+      31
+    ]
+  },
+  "per_family_selection_audit": {
+    "iforest": {
+      "fewest_missed_engines": [
+        15
+      ],
+      "frozen_family_order": [
+        15
+      ],
+      "highest_cutoff": [
+        15
+      ],
+      "lowest_healthy_trigger_fraction": [
+        15
+      ],
+      "lowest_mean_early_burden": [
+        15
+      ],
+      "lowest_mean_late_delay": [
+        15
+      ],
+      "lowest_mean_total_cost": [
+        15
+      ],
+      "simplest_persistence": [
+        15
+      ]
+    },
+    "lof": {
+      "fewest_missed_engines": [
+        31
+      ],
+      "frozen_family_order": [
+        31
+      ],
+      "highest_cutoff": [
+        31
+      ],
+      "lowest_healthy_trigger_fraction": [
+        31
+      ],
+      "lowest_mean_early_burden": [
+        31
+      ],
+      "lowest_mean_late_delay": [
+        31
+      ],
+      "lowest_mean_total_cost": [
+        31
+      ],
+      "simplest_persistence": [
+        31
+      ]
+    },
+    "ocsvm": {
+      "fewest_missed_engines": [
+        47
+      ],
+      "frozen_family_order": [
+        47
+      ],
+      "highest_cutoff": [
+        47
+      ],
+      "lowest_healthy_trigger_fraction": [
+        47
+      ],
+      "lowest_mean_early_burden": [
+        47
+      ],
+      "lowest_mean_late_delay": [
+        47
+      ],
+      "lowest_mean_total_cost": [
+        47
+      ],
+      "simplest_persistence": [
+        47
+      ]
+    },
+    "pca": {
+      "fewest_missed_engines": [
+        49
+      ],
+      "frozen_family_order": [
+        49
+      ],
+      "highest_cutoff": [
+        49
+      ],
+      "lowest_healthy_trigger_fraction": [
+        49
+      ],
+      "lowest_mean_early_burden": [
+        49
+      ],
+      "lowest_mean_late_delay": [
+        49
+      ],
+      "lowest_mean_total_cost": [
+        49
+      ],
+      "simplest_persistence": [
+        49
+      ]
+    }
+  },
+  "per_family_winners": {
+    "iforest": {
+      "candidate_id": "iforest_n200_ms_0p5",
+      "cutoff": 0.99,
+      "family": "iforest",
+      "healthy_first_trigger_fraction": 0.0,
+      "m": 5,
+      "maximum_lead_time": 110.0,
+      "mean_early_component": 0.7566666666666666,
+      "mean_late_component": 0.0,
+      "mean_lead_time": 66.2,
+      "mean_miss_component": 0.0,
+      "mean_raw_early_burden": 36.2,
+      "mean_raw_late_delay": 0.0,
+      "mean_total_cost": 0.7566666666666666,
+      "median_lead_time": 58.0,
+      "minimum_lead_time": 35.0,
+      "miss_rate": 0.0,
+      "missed_engines": 0,
+      "n": 10,
+      "n_engines": 10,
+      "reference_type": "pooled",
+      "selection_eligible": true,
+      "trigger_at_failure_only_engines": 0
+    },
+    "lof": {
+      "candidate_id": "lof_k50",
+      "cutoff": 0.99,
+      "family": "lof",
+      "healthy_first_trigger_fraction": 0.0,
+      "m": 5,
+      "maximum_lead_time": 91.0,
+      "mean_early_component": 0.6833333333333333,
+      "mean_late_component": 0.0,
+      "mean_lead_time": 57.7,
+      "mean_miss_component": 0.0,
+      "mean_raw_early_burden": 27.7,
+      "mean_raw_late_delay": 0.0,
+      "mean_total_cost": 0.6833333333333333,
+      "median_lead_time": 55.5,
+      "minimum_lead_time": 30.0,
+      "miss_rate": 0.0,
+      "missed_engines": 0,
+      "n": 10,
+      "n_engines": 10,
+      "reference_type": "pooled",
+      "selection_eligible": true,
+      "trigger_at_failure_only_engines": 0
+    },
+    "ocsvm": {
+      "candidate_id": "ocsvm_nu0p05_gamma_0p01",
+      "cutoff": 0.99,
+      "family": "ocsvm",
+      "healthy_first_trigger_fraction": 0.0,
+      "m": 5,
+      "maximum_lead_time": 113.0,
+      "mean_early_component": 0.7966666666666666,
+      "mean_late_component": 0.0,
+      "mean_lead_time": 71.4,
+      "mean_miss_component": 0.0,
+      "mean_raw_early_burden": 41.4,
+      "mean_raw_late_delay": 0.0,
+      "mean_total_cost": 0.7966666666666666,
+      "median_lead_time": 64.0,
+      "minimum_lead_time": 37.0,
+      "miss_rate": 0.0,
+      "missed_engines": 0,
+      "n": 10,
+      "n_engines": 10,
+      "reference_type": "pooled",
+      "selection_eligible": true,
+      "trigger_at_failure_only_engines": 0
+    },
+    "pca": {
+      "candidate_id": "pca_evr0p95",
+      "cutoff": 0.9,
+      "family": "pca",
+      "healthy_first_trigger_fraction": 0.5,
+      "m": 2,
+      "maximum_lead_time": 269.0,
+      "mean_early_component": 0.8066666666666666,
+      "mean_late_component": 0.4,
+      "mean_lead_time": 124.0,
+      "mean_miss_component": 0.0,
+      "mean_raw_early_burden": 96.4,
+      "mean_raw_late_delay": 2.4,
+      "mean_total_cost": 1.2066666666666666,
+      "median_lead_time": 113.0,
+      "minimum_lead_time": 6.0,
+      "miss_rate": 0.0,
+      "missed_engines": 0,
+      "n": 3,
+      "n_engines": 10,
+      "reference_type": "pooled",
+      "selection_eligible": true,
+      "trigger_at_failure_only_engines": 0
+    }
+  },
+  "policy_bundle_path": "artifacts/models/FD001_anomaly_policy_bundle.joblib",
+  "policy_bundle_sha256": "350270587ae7f544d7ee1957b60d2992baed81b061689c30bdbf673ddcaa0921",
+  "result_version": 1,
+  "selection_partition": "val_calib",
+  "subset": "FD001"
+}

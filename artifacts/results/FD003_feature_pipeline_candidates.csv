@@ -1,0 +1,9 @@
+candidate_id,representation,window,include_settings,n_fit_rows,n_fit_engines,n_sensors,n_settings_available,n_features,scaler_mean_parity,scaler_scale_parity,train_scaled_mean_max_abs,shuffled_alignment,past_causality_parity,future_perturbation_effective
+baseline__settings_0,baseline,1,False,18219,70,16,2,16,True,True,2.6236955293344224e-12,True,True,True
+window5__settings_0,window,5,False,18219,70,16,2,129,True,True,3.274953440269689e-12,True,True,True
+window15__settings_0,window,15,False,18219,70,16,2,129,True,True,4.650982881724083e-12,True,True,True
+window30__settings_0,window,30,False,18219,70,16,2,129,True,True,2.9141869589658175e-12,True,True,True
+baseline__settings_1,baseline,1,True,18219,70,16,2,18,True,True,2.6236955293344224e-12,True,True,True
+window5__settings_1,window,5,True,18219,70,16,2,131,True,True,3.274953440269689e-12,True,True,True
+window15__settings_1,window,15,True,18219,70,16,2,131,True,True,4.650982881724083e-12,True,True,True
+window30__settings_1,window,30,True,18219,70,16,2,131,True,True,2.9141869589658175e-12,True,True,True

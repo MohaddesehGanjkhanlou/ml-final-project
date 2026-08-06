@@ -1,0 +1,22 @@
+{
+  "subset": "FD001",
+  "family": "iforest",
+  "candidate_count": 4,
+  "candidate_ids": [
+    "iforest_n200_ms_auto",
+    "iforest_n200_ms_0p5",
+    "iforest_n400_ms_auto",
+    "iforest_n400_ms_0p5"
+  ],
+  "healthy_boundary": 125,
+  "fit_rows": 3867,
+  "reference_rows": 1820,
+  "reference_engines": 18,
+  "engine_balanced_k": 24,
+  "engine_balanced_rows": 432,
+  "bundle": "artifacts/models/FD001_anomaly_iforest_candidates.joblib",
+  "bundle_sha256": "b57d5aa27c3bf696c4f8d6c9b077a1674f1fe96d6473c30d853b5610a5f5d10d",
+  "selection_status": "PENDING_VAL_TUNE",
+  "val_calib_status": "RESERVED",
+  "official_test_status": "SEALED"
+}

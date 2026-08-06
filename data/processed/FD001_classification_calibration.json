@@ -1,0 +1,50 @@
+{
+  "subset": "FD001",
+  "method": "horizon-specific Platt scaling",
+  "fit_partition": "val_calib",
+  "n_calibration_engines": 10,
+  "n_calibration_rows": 2026,
+  "monotonicity_rule": "cumulative maximum: P10 <= P20 <= P30",
+  "pre_correction_violation_rate": 0.03652517275419546,
+  "n_pre_correction_violations": 74,
+  "n_P10_greater_P20": 18,
+  "n_P20_greater_P30": 56,
+  "bundle_path": "artifacts/models/FD001_classification_calibrated_bundle.joblib",
+  "bundle_sha256": "691365850174ecdb465d6ca4a827c226b7760ab9b0fbe7df8fcbf5da8073195a",
+  "source_raw_bundle_sha256": "f726ddf38dc00f815cf9d39d9dfc001a32a82087d7b5db02947bd4af5d169bce",
+  "threshold_status": "pending",
+  "official_test_status": "sealed",
+  "interpretation": "Calibration metrics are in-sample VAL-CALIB diagnostics. Independent evaluation is deferred to the sealed official test set.",
+  "per_horizon": {
+    "10": {
+      "method": "Platt scaling",
+      "fit_partition": "val_calib",
+      "C": 1.0,
+      "coefficient": 2.4984104968703194,
+      "intercept": -5.4693977639166915,
+      "n_rows": 2026,
+      "n_positive": 110,
+      "positive_rate": 0.054294175715695954
+    },
+    "20": {
+      "method": "Platt scaling",
+      "fit_partition": "val_calib",
+      "C": 1.0,
+      "coefficient": 0.9983114860890074,
+      "intercept": -0.05808766429077305,
+      "n_rows": 2026,
+      "n_positive": 210,
+      "positive_rate": 0.10365251727541955
+    },
+    "30": {
+      "method": "Platt scaling",
+      "fit_partition": "val_calib",
+      "C": 1.0,
+      "coefficient": 0.8619486263210856,
+      "intercept": -0.5237237328957907,
+      "n_rows": 2026,
+      "n_positive": 310,
+      "positive_rate": 0.15301085883514315
+    }
+  }
+}

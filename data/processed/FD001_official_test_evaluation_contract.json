@@ -1,0 +1,141 @@
+{
+  "anomaly_evaluation": {
+    "asymmetric_cost_on_truncated_test": "not reported as directly comparable to run-to-failure VAL-CALIB cost",
+    "candidate_id": "lof_k50",
+    "censoring_rule": "No alert before final observed cycle is reported as censored/no-alert-by-observation-end; it is not counted as a confirmed missed failure.",
+    "cutoff": 0.99,
+    "family": "lof",
+    "observed_alert_metrics": [
+      "fraction_alerted_before_observation_end",
+      "lead_time_to_virtual_failure_if_alerted",
+      "final_observed_anomaly_percentile"
+    ],
+    "persistence": {
+      "alert_latched": true,
+      "cycle_gap_reset": true,
+      "m": 5,
+      "n": 10
+    },
+    "proxy_regions_if_available": {
+      "healthy": "RUL > 125",
+      "middle": "excluded from proxy AUC",
+      "near_failure": "RUL <= 30"
+    },
+    "reference_type": "pooled"
+  },
+  "artifact_type": "official_test_evaluation_contract",
+  "artifact_version": 1,
+  "classification_evaluation": {
+    "horizons": [
+      10,
+      20,
+      30
+    ],
+    "metrics": [
+      "PR_AUC",
+      "Brier",
+      "precision",
+      "recall",
+      "F1",
+      "confusion_matrix"
+    ],
+    "operational_secondary_unit": "last_observed_row_per_engine",
+    "primary_unit": "all_observed_engine-cycle_rows",
+    "probability_pipeline": "raw classifier -> Platt -> cumulative-max horizon monotonicity",
+    "probability_recalibration": false,
+    "threshold_policy": "frozen_FN10_FP1",
+    "threshold_reoptimization": false,
+    "thresholds": {
+      "10": 0.11340399728926802,
+      "20": 0.22290462955112206,
+      "30": 0.11654045954796569
+    }
+  },
+  "created_before_official_test_access": true,
+  "expected_test_engines": 100,
+  "frozen_artifacts": {
+    "anomaly_policy_bundle": {
+      "path": "artifacts/models/FD001_anomaly_policy_bundle.joblib",
+      "sha256": "350270587ae7f544d7ee1957b60d2992baed81b061689c30bdbf673ddcaa0921",
+      "size_bytes": 11738564
+    },
+    "anomaly_readiness_contract": {
+      "path": "data/processed/FD001_anomaly_development_readiness.json",
+      "sha256": "5e56cdacee65d694dd41cf1b34c7abd13f342dd1eb4db597e94c4c070fefac78",
+      "size_bytes": 3582
+    },
+    "classification_bundle": {
+      "path": "artifacts/models/FD001_classification_bundle.joblib",
+      "sha256": "9f54d9da77012489642d366edad8ee33e391f931649e837fc296c4c679eac157",
+      "size_bytes": 16885
+    },
+    "classification_threshold_contract": {
+      "path": "data/processed/FD001_classification_thresholds.json",
+      "sha256": "121352b4d339ccbfd0d592837baf62978537590d320d592ee9e394a61361cf91",
+      "size_bytes": 1153
+    },
+    "regression_bundle": {
+      "path": "artifacts/models/FD001_regression_bundle.joblib",
+      "sha256": "091009e2b1aff9b77ea0378d91105c6715f311c2cc31fe2a99a452843fbac9a6",
+      "size_bytes": 192588
+    },
+    "rul_conformal_contract": {
+      "path": "data/processed/FD001_rul_conformal.json",
+      "sha256": "c3a19247b7e58ae46bb7c855bb6ce4c249e98f804218d7d05c12accc19815999",
+      "size_bytes": 911
+    }
+  },
+  "loader": {
+    "cap_argument": null,
+    "function": "data_loader.load_test_with_rul",
+    "truth": "uncapped row-level RUL",
+    "virtual_failure_cycle": "last_observed_cycle + official_final_RUL"
+  },
+  "official_test_gate": {
+    "accessed_in_this_cell": false,
+    "current_status": "SEALED",
+    "next_action": "one-time load, structural validation, and immutable access record"
+  },
+  "prohibitions_after_unsealing": [
+    "No model refitting.",
+    "No feature reselection.",
+    "No probability recalibration.",
+    "No threshold or persistence reoptimization.",
+    "No conformal-quantile recalculation."
+  ],
+  "regression_evaluation": {
+    "conformal": {
+      "coverage_target": 0.9,
+      "evaluate_on": [
+        "last_observed_row_per_engine",
+        "all_observed_rows"
+      ],
+      "lower_bound_clipped_at_zero": true,
+      "residual_quantile": 18.413393217043065
+    },
+    "include_settings": false,
+    "model": "gbr",
+    "prediction_clipping": "lower_bound_zero",
+    "primary_metrics": [
+      "PHM_score_mean",
+      "PHM_score_sum",
+      "MAE",
+      "RMSE",
+      "R2"
+    ],
+    "primary_truth": "uncapped_RUL",
+    "primary_unit": "last_observed_row_per_engine",
+    "representation": "window",
+    "secondary_evaluation": "observed rows with uncapped RUL <= 100",
+    "training_target_cap": 100,
+    "window": 30
+  },
+  "status": "READY_TO_UNSEAL",
+  "subset": "FD001",
+  "uncertainty": {
+    "bootstrap_draws": 1000,
+    "confidence_level": 0.95,
+    "resampling_unit": "engine_id",
+    "seed": 42
+  }
+}

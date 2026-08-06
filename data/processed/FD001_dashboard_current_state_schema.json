@@ -1,0 +1,127 @@
+{
+  "artifact_type": "dashboard_current_state_schema",
+  "artifact_version": 1,
+  "columns": {
+    "RUL_lower_cycles": {
+      "type": "float",
+      "unit": "cycles"
+    },
+    "RUL_upper_cycles": {
+      "type": "float",
+      "unit": "cycles"
+    },
+    "anomaly_percentile": {
+      "note": "Frozen TRAIN-reference percentile; not a probability",
+      "range": [
+        0.0,
+        1.0
+      ],
+      "type": "float"
+    },
+    "current_cycle": {
+      "description": "Latest observed engine cycle",
+      "type": "integer"
+    },
+    "engine_id": {
+      "description": "Engine identifier",
+      "type": "integer"
+    },
+    "failure_probability_10_cycles": {
+      "range": [
+        0.0,
+        1.0
+      ],
+      "type": "float"
+    },
+    "failure_probability_20_cycles": {
+      "range": [
+        0.0,
+        1.0
+      ],
+      "type": "float"
+    },
+    "failure_probability_30_cycles": {
+      "range": [
+        0.0,
+        1.0
+      ],
+      "type": "float"
+    },
+    "operational_priority": {
+      "description": "One-based operational display order",
+      "type": "integer"
+    },
+    "persistent_anomaly_alert": {
+      "allowed_values": [
+        0,
+        1
+      ],
+      "type": "integer"
+    },
+    "predicted_RUL_cycles": {
+      "type": "float",
+      "unit": "cycles"
+    },
+    "primary_reason": {
+      "type": "string"
+    },
+    "primary_reason_code": {
+      "type": "string"
+    },
+    "recommendation": {
+      "allowed_values": [
+        "CONTINUE",
+        "INSPECT",
+        "STOP"
+      ],
+      "type": "categorical"
+    },
+    "recommended_action": {
+      "type": "string"
+    }
+  },
+  "governance": {
+    "allowed_use": [
+      "dashboard recommendation",
+      "application integration",
+      "descriptive Official-Test recommendation counts"
+    ],
+    "anomaly_policy_reselection_performed": false,
+    "creation_phase": "post_official_test_unseal_system_integration",
+    "independent_preregistered_combined_policy": false,
+    "interpretation": "The component models and thresholds were frozen before Official-Test access. The deterministic rule combining their outputs was documented after unseal and must not be presented as a preregistered combined policy selected independently of Test visibility.",
+    "model_refitting_performed": false,
+    "probability_recalibration_performed": false,
+    "test_outcome_optimization_performed": false,
+    "threshold_reselection_performed": false
+  },
+  "ground_truth_exposed_to_dashboard": false,
+  "integrated_contract": {
+    "path": "data/processed/FD001_integrated_recommendation_contract.json",
+    "sha256": "4c5cfe7649c252b0ee1ed27480e8b1ce8fa2766adec17542f9d88f3cdf52678d"
+  },
+  "intended_use": [
+    "dashboard table",
+    "engine detail page",
+    "operational demonstration"
+  ],
+  "n_engines": 100,
+  "not_for": [
+    "model training",
+    "threshold selection",
+    "policy optimization"
+  ],
+  "priority_rule": "STOP > INSPECT > CONTINUE",
+  "recommendation_levels": [
+    "CONTINUE",
+    "INSPECT",
+    "STOP"
+  ],
+  "row_granularity": "one final observed snapshot per engine",
+  "scope": "official_test_final_observed_snapshot",
+  "source_artifact": {
+    "path": "artifacts/results/FD001_official_test_integrated_final_recommendations.csv",
+    "sha256": "986558001d427eb6bca278bd8c51863ae777ea642d3bf10b8b638a132080c24b"
+  },
+  "subset": "FD001"
+}

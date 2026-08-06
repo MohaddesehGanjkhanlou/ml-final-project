@@ -1,0 +1,37 @@
+{
+  "subset": "FD001",
+  "const_threshold": 1e-06,
+  "fit_on": "df_tr (training engines only, post-split)",
+  "drop_sensors": [
+    "sensor_1",
+    "sensor_5",
+    "sensor_10",
+    "sensor_16",
+    "sensor_18",
+    "sensor_19"
+  ],
+  "drop_settings": [
+    "op_setting_3"
+  ],
+  "keep_sensors": [
+    "sensor_2",
+    "sensor_3",
+    "sensor_4",
+    "sensor_6",
+    "sensor_7",
+    "sensor_8",
+    "sensor_9",
+    "sensor_11",
+    "sensor_12",
+    "sensor_13",
+    "sensor_14",
+    "sensor_15",
+    "sensor_17",
+    "sensor_20",
+    "sensor_21"
+  ],
+  "keep_settings": [
+    "op_setting_1",
+    "op_setting_2"
+  ]
+}

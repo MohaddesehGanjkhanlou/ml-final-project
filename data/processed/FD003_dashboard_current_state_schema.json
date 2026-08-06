@@ -1,0 +1,95 @@
+{
+  "artifact_type": "dashboard_current_state_schema",
+  "artifact_version": 1,
+  "columns": [
+    {
+      "dtype": "int64",
+      "name": "operational_priority"
+    },
+    {
+      "dtype": "int64",
+      "name": "engine_id"
+    },
+    {
+      "dtype": "int64",
+      "name": "current_cycle"
+    },
+    {
+      "dtype": "float64",
+      "name": "predicted_RUL_cycles"
+    },
+    {
+      "dtype": "float64",
+      "name": "RUL_lower_cycles"
+    },
+    {
+      "dtype": "float64",
+      "name": "RUL_upper_cycles"
+    },
+    {
+      "dtype": "float64",
+      "name": "failure_probability_10_cycles"
+    },
+    {
+      "dtype": "int64",
+      "name": "classification_decision_h10"
+    },
+    {
+      "dtype": "float64",
+      "name": "failure_probability_20_cycles"
+    },
+    {
+      "dtype": "int64",
+      "name": "classification_decision_h20"
+    },
+    {
+      "dtype": "float64",
+      "name": "failure_probability_30_cycles"
+    },
+    {
+      "dtype": "int64",
+      "name": "classification_decision_h30"
+    },
+    {
+      "dtype": "float64",
+      "name": "anomaly_percentile"
+    },
+    {
+      "dtype": "int64",
+      "name": "persistent_anomaly_alert"
+    },
+    {
+      "dtype": "object",
+      "name": "recommendation"
+    },
+    {
+      "dtype": "object",
+      "name": "primary_reason_code"
+    },
+    {
+      "dtype": "object",
+      "name": "all_triggered_reason_codes"
+    },
+    {
+      "dtype": "int64",
+      "name": "recommendation_rank"
+    },
+    {
+      "dtype": "object",
+      "name": "primary_reason"
+    },
+    {
+      "dtype": "object",
+      "name": "recommended_action"
+    }
+  ],
+  "ground_truth_exposed": false,
+  "recommendation_values": [
+    "CONTINUE",
+    "INSPECT",
+    "STOP"
+  ],
+  "row_granularity": "one final observed snapshot per engine",
+  "source_integrated_contract_sha256": "7c65143b4636ee912ebe4791fe6629095207a792663c7919f457c68f588e1caa",
+  "subset": "FD003"
+}

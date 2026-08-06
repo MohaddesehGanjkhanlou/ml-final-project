@@ -1,0 +1,4 @@
+subset,partition,region,n_rows,coverage,average_width_cycles,mean_absolute_error_cycles
+FD001,val_calib,near_failure,310,1.0,32.16517780319241,4.037221312293701
+FD001,val_calib,mid_life,700,0.7928571428571428,34.274875356187955,11.26492347223879
+FD001,val_calib,early_life,1016,0.9448818897637795,23.27973501903892,5.1358616673576005

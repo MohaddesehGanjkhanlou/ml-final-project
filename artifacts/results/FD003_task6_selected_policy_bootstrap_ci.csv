@@ -1,0 +1,9 @@
+evaluation_scope,resampling_unit,metric,point_estimate,bootstrap_mean,ci_95_lower,ci_95_upper,valid_draws,invalid_draws
+val_calib_selected_anomaly_policy,engine_id,mean_total_cost,0.55,0.5482899999999999,0.3365833333333333,0.7800833333333332,1000,0
+val_calib_selected_anomaly_policy,engine_id,miss_rate,0.0,0.0,0.0,0.0,1000,0
+val_calib_selected_anomaly_policy,engine_id,mean_miss_component,0.0,0.0,0.0,0.0,1000,0
+val_calib_selected_anomaly_policy,engine_id,mean_late_component,0.13333333333333333,0.13093333333333335,0.0,0.4,1000,0
+val_calib_selected_anomaly_policy,engine_id,mean_early_component,0.4166666666666667,0.41735666666666665,0.2333333333333333,0.5966666666666667,1000,0
+val_calib_selected_anomaly_policy,engine_id,mean_lead_time_if_alerted,43.0,43.007799999999996,35.394999999999996,51.7025,1000,0
+val_calib_selected_anomaly_policy,engine_id,median_lead_time_if_alerted,43.0,42.5495,35.5,48.0,1000,0
+val_calib_selected_anomaly_policy,engine_id,healthy_first_trigger_fraction,0.0,0.0,0.0,0.0,1000,0

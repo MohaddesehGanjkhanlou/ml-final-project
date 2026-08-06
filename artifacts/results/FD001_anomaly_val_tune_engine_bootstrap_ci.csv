@@ -1,0 +1,5 @@
+family,candidate_id,partition,metric,point_estimate,bootstrap_mean,ci_95_lower,ci_95_upper,requested_draws,valid_draws,invalid_single_class_draws,n_unique_engines,seed
+iforest,iforest_n200_ms_0p5,val_tune_proxy,pooled_raw_score_ROC_AUC,0.9998906333047141,0.9998836514366571,0.9996230940551158,1.0,1000,1000,0,20,42
+lof,lof_k50,val_tune_proxy,pooled_raw_score_ROC_AUC,0.9993202910993908,0.9992693245413975,0.9984147903089693,0.9999233053967518,1000,1000,0,20,42
+ocsvm,ocsvm_nu0p05_gamma_0p01,val_tune_proxy,pooled_raw_score_ROC_AUC,0.9999529825422135,0.9999501747295585,0.9998398327278797,1.0,1000,1000,0,20,42
+pca,pca_evr0p95,val_tune_proxy,pooled_raw_score_ROC_AUC,0.6847653215585265,0.6813351009091471,0.6028480748255284,0.7647603682514382,1000,1000,0,20,42

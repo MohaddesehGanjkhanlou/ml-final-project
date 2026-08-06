@@ -1,0 +1,76 @@
+{
+  "artifact_type": "official_test_access_record",
+  "artifact_version": 1,
+  "cell_scope": {
+    "allowed_operations": [
+      "load official test rows",
+      "attach official row-level RUL",
+      "perform structural validation",
+      "write immutable access record"
+    ],
+    "note": "The prohibited-operation list is a declared execution boundary. Frozen-artifact hashes before and after the cell provide runtime evidence that persisted models and contracts were not modified.",
+    "prohibited_operations": [
+      "model fitting",
+      "model prediction",
+      "feature selection",
+      "probability recalibration",
+      "threshold reoptimization"
+    ]
+  },
+  "computed_checks": {
+    "all_numeric_values_finite": true,
+    "constant_virtual_failure_cycle": true,
+    "contiguous_cycles_for_every_engine": true,
+    "contract_created_before_test_access": true,
+    "contract_gate_was_sealed": true,
+    "evaluation_contract_hash_valid": true,
+    "evaluation_contract_ready_to_unseal": true,
+    "every_engine_starts_at_cycle_one": true,
+    "expected_column_order": true,
+    "expected_engine_count": true,
+    "frozen_artifacts_match_contract_before": true,
+    "frozen_artifacts_unchanged_after": true,
+    "integer_valued_rul": true,
+    "nonnegative_row_rul": true,
+    "one_final_snapshot_per_engine": true,
+    "rul_decreases_one_per_cycle": true,
+    "sequential_engine_ids": true,
+    "unique_dataframe_index": true,
+    "unique_engine_cycle_keys": true
+  },
+  "evaluation_contract": {
+    "path": "data/processed/FD001_official_test_evaluation_contract.json",
+    "sha256": "f415f8aa3ed36842792fc90990eef5ba7f9ea2ee86e5c957255733db066d747a"
+  },
+  "loader": {
+    "cap": null,
+    "function": "data_loader.load_test_with_rul"
+  },
+  "official_inputs": {
+    "rul_file": {
+      "path": "data/raw/RUL_FD001.txt",
+      "sha256": "a19c8ec94931949d0485bdc35118206e9c81c4547b422efb9cf86f4ceddbceca",
+      "size_bytes": 429
+    },
+    "test_file": {
+      "path": "data/raw/test_FD001.txt",
+      "sha256": "3cda7109ce17bafb5443f2ac926cfcf88154b941b8c4cf95eb55d1ddd6f52851",
+      "size_bytes": 2228855
+    }
+  },
+  "status": "UNSEALED_FOR_EVALUATION",
+  "structural_summary": {
+    "maximum_final_rul": 145.0,
+    "maximum_observed_cycle": 303,
+    "maximum_row_rul": 340.0,
+    "maximum_virtual_failure_cycle": 341.0,
+    "minimum_final_rul": 7.0,
+    "minimum_observed_cycle": 1,
+    "minimum_row_rul": 7.0,
+    "minimum_virtual_failure_cycle": 141.0,
+    "n_columns": 27,
+    "n_engines": 100,
+    "n_rows": 13096
+  },
+  "subset": "FD001"
+}

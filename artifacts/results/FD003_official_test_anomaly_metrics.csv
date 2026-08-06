@@ -1,0 +1,15 @@
+metric,point_estimate,interpretation,censoring_aware,asymmetric_run_to_failure_cost_reported
+fraction_alerted_before_observation_end,0.28,Observed persistent-alert fraction; not a detection rate under censoring.,True,False
+fraction_censored_no_alert_by_observation_end,0.72,No alert before truncation; not a confirmed miss.,True,False
+mean_lead_time_if_alerted,60.214285714285715,Mean cycles from first persistent alert to virtual failure among alerted engines.,True,False
+median_lead_time_if_alerted,55.5,Median cycles from first persistent alert to virtual failure among alerted engines.,True,False
+fraction_all_engines_alert_with_30_cycle_action_time,0.27,Censoring-aware descriptive Official-Test diagnostic.,True,False
+fraction_alerted_engines_with_30_cycle_action_time,0.9642857142857143,Censoring-aware descriptive Official-Test diagnostic.,True,False
+fraction_alerted_inside_30_cycle_action_horizon,0.03571428571428571,Censoring-aware descriptive Official-Test diagnostic.,True,False
+healthy_proxy_first_alert_fraction_all_engines,0.01,Censoring-aware descriptive Official-Test diagnostic.,True,False
+healthy_proxy_first_alert_fraction_alerted,0.03571428571428571,Censoring-aware descriptive Official-Test diagnostic.,True,False
+mean_final_observed_anomaly_percentile,0.754676029364826,Censoring-aware descriptive Official-Test diagnostic.,True,False
+fraction_final_percentile_above_cutoff,0.31,Censoring-aware descriptive Official-Test diagnostic.,True,False
+healthy_row_raw_crossing_rate,0.008518485992798806,Censoring-aware descriptive Official-Test diagnostic.,True,False
+near_failure_row_raw_crossing_rate,0.9450171821305842,Censoring-aware descriptive Official-Test diagnostic.,True,False
+healthy_vs_near_failure_raw_score_ROC_AUC,0.9975612751866012,Censoring-aware descriptive Official-Test diagnostic.,True,False

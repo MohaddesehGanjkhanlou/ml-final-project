@@ -1,0 +1,71 @@
+{
+  "action_horizon": 30,
+  "alert_latching": true,
+  "artifact_type": "frozen_anomaly_policy_grid_contract",
+  "artifact_version": 1,
+  "cost_weights": {
+    "c_early": 1.0,
+    "c_late": 5.0,
+    "c_miss": 100.0
+  },
+  "cycle_gap_reset": true,
+  "diagnostic_only_persistence_grid": [
+    [
+      1,
+      1
+    ]
+  ],
+  "early_cost_cap": 1.0,
+  "eligible_persistence_grid": [
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      5
+    ],
+    [
+      5,
+      10
+    ]
+  ],
+  "healthy_boundary": 125,
+  "late_cost_cap": 1.0,
+  "official_test_accessed": false,
+  "official_test_status": "SEALED",
+  "reference_type": "pooled",
+  "selected_candidates": {
+    "iforest": "iforest_n200_ms_0p5",
+    "lof": "lof_k50",
+    "ocsvm": "ocsvm_nu0p05_gamma_0p01",
+    "pca": "pca_evr0p95"
+  },
+  "selection_order": [
+    "fewest missed engines",
+    "lowest mean total cost",
+    "lowest healthy first-trigger fraction",
+    "lowest mean early component",
+    "lowest mean late component",
+    "family",
+    "cutoff",
+    "m",
+    "n"
+  ],
+  "source_anomaly_bundle": {
+    "path": "artifacts/models/FD003_anomaly_selected_family_bundle.joblib",
+    "sha256": "f62f763d33bc2611e5527542e70b84aab6469d4ea37994677573316a691cfb5c"
+  },
+  "source_selection_contract": {
+    "path": "data/processed/FD003_anomaly_within_family_selected.json",
+    "sha256": "9db51b880c479e9e001b4dc4618d7f24a2e4f150d6e4756491dde06536568949"
+  },
+  "subset": "FD003",
+  "threshold_grid": [
+    0.9,
+    0.95,
+    0.975,
+    0.99
+  ],
+  "val_calib_accessed": false
+}

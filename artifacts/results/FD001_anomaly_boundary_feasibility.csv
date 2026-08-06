@@ -1,0 +1,7 @@
+role,boundary,n_engines,total_healthy_rows,contributing_engines,minimum_rows_per_engine,median_rows_per_engine,all_engines_contribute
+anomaly_fit,100,52,5167,52,27,94.0,True
+anomaly_fit,125,52,3867,52,2,69.0,True
+anomaly_fit,150,52,2612,48,0,44.0,False
+anomaly_reference,100,18,2270,18,49,113.0,True
+anomaly_reference,125,18,1820,18,24,88.0,True
+anomaly_reference,150,18,1371,17,0,63.0,False

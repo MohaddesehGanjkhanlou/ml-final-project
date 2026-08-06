@@ -1,0 +1,22 @@
+{
+  "subset": "FD001",
+  "family": "lof",
+  "candidate_count": 3,
+  "candidate_ids": [
+    "lof_k20",
+    "lof_k35",
+    "lof_k50"
+  ],
+  "healthy_boundary": 125,
+  "fit_rows": 3867,
+  "reference_rows": 1820,
+  "reference_engines": 18,
+  "engine_balanced_k": 24,
+  "engine_balanced_rows": 432,
+  "novelty": true,
+  "bundle": "artifacts/models/FD001_anomaly_lof_candidates.joblib",
+  "bundle_sha256": "fd5d59de819618e9b2b4bd63f4e3584122d690d9258f920a22bffa2037aa5194",
+  "selection_status": "PENDING_VAL_TUNE",
+  "val_calib_status": "RESERVED",
+  "official_test_status": "SEALED"
+}

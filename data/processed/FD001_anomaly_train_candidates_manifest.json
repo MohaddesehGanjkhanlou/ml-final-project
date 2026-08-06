@@ -1,0 +1,103 @@
+{
+  "manifest_version": 1,
+  "subset": "FD001",
+  "task": "unsupervised_anomaly_detection",
+  "stage": "train_only_candidates_complete",
+  "candidate_count": 16,
+  "family_counts": {
+    "iforest": 4,
+    "lof": 3,
+    "ocsvm": 6,
+    "pca": 3
+  },
+  "candidate_ids": [
+    "iforest_n200_ms_auto",
+    "iforest_n200_ms_0p5",
+    "iforest_n400_ms_auto",
+    "iforest_n400_ms_0p5",
+    "lof_k20",
+    "lof_k35",
+    "lof_k50",
+    "ocsvm_nu0p01_gamma_scale",
+    "ocsvm_nu0p01_gamma_0p01",
+    "ocsvm_nu0p05_gamma_scale",
+    "ocsvm_nu0p05_gamma_0p01",
+    "ocsvm_nu0p1_gamma_scale",
+    "ocsvm_nu0p1_gamma_0p01",
+    "pca_evr0p9",
+    "pca_evr0p95",
+    "pca_evr0p99"
+  ],
+  "healthy_definition": "RUL > 125",
+  "preprocessing": {
+    "path": "artifacts/models/FD001_anomaly_preprocessing_bundle.joblib",
+    "sha256": "c3f841a3f8bb21cf5921ba5d0cd630d49e773a97b334191082cf7fbbbb86a8ce"
+  },
+  "families": {
+    "iforest": {
+      "bundle_path": "artifacts/models/FD001_anomaly_iforest_candidates.joblib",
+      "bundle_sha256": "b57d5aa27c3bf696c4f8d6c9b077a1674f1fe96d6473c30d853b5610a5f5d10d",
+      "bundle_size_bytes": 35752768,
+      "candidate_count": 4,
+      "candidate_ids": [
+        "iforest_n200_ms_auto",
+        "iforest_n200_ms_0p5",
+        "iforest_n400_ms_auto",
+        "iforest_n400_ms_0p5"
+      ]
+    },
+    "lof": {
+      "bundle_path": "artifacts/models/FD001_anomaly_lof_candidates.joblib",
+      "bundle_sha256": "fd5d59de819618e9b2b4bd63f4e3584122d690d9258f920a22bffa2037aa5194",
+      "bundle_size_bytes": 5072584,
+      "candidate_count": 3,
+      "candidate_ids": [
+        "lof_k20",
+        "lof_k35",
+        "lof_k50"
+      ]
+    },
+    "ocsvm": {
+      "bundle_path": "artifacts/models/FD001_anomaly_ocsvm_candidates.joblib",
+      "bundle_sha256": "9da172d01659b8a0715b0d3cdeac21fa56b81cd499d20d33ef35d08955a285a1",
+      "bundle_size_bytes": 339080,
+      "candidate_count": 6,
+      "candidate_ids": [
+        "ocsvm_nu0p01_gamma_scale",
+        "ocsvm_nu0p01_gamma_0p01",
+        "ocsvm_nu0p05_gamma_scale",
+        "ocsvm_nu0p05_gamma_0p01",
+        "ocsvm_nu0p1_gamma_scale",
+        "ocsvm_nu0p1_gamma_0p01"
+      ]
+    },
+    "pca": {
+      "bundle_path": "artifacts/models/FD001_anomaly_pca_candidates.joblib",
+      "bundle_sha256": "1885993757a5a6efb9763a9c951cc3f059ade6803643f3e227448001dd7ab5cb",
+      "bundle_size_bytes": 68744,
+      "candidate_count": 3,
+      "candidate_ids": [
+        "pca_evr0p9",
+        "pca_evr0p95",
+        "pca_evr0p99"
+      ]
+    }
+  },
+  "catalog_path": "artifacts/results/FD001_anomaly_candidate_catalog.csv",
+  "score_contract": {
+    "direction": "larger_is_more_abnormal",
+    "primary_normalization": "pooled_train_reference_percentile",
+    "sensitivity_normalization": "engine_balanced_train_reference_percentile",
+    "raw_score_is_probability": false
+  },
+  "data_roles": {
+    "fit": "anomaly_fit from official TRAIN",
+    "reference": "anomaly_reference from official TRAIN",
+    "selection": "VAL-TUNE pending",
+    "policy_calibration": "VAL-CALIB reserved",
+    "final_evaluation": "official TEST sealed"
+  },
+  "val_tune_accessed_here": false,
+  "val_calib_status": "RESERVED",
+  "official_test_status": "SEALED"
+}

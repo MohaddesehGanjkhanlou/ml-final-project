@@ -1,0 +1,23 @@
+{
+  "contract_version": 1,
+  "subset": "FD001",
+  "partition": "val_tune",
+  "purpose": "selection among frozen unsupervised candidates",
+  "healthy_proxy": "RUL > 125",
+  "abnormal_proxy": "RUL <= 30",
+  "excluded_middle": "30 < RUL <= 125",
+  "total_rows": 4098,
+  "healthy_proxy_rows": 1578,
+  "near_failure_proxy_rows": 620,
+  "excluded_middle_rows": 1900,
+  "proxy_rows": 2198,
+  "val_tune_engines": 20,
+  "proxy_engines": 20,
+  "transformed_features": 17,
+  "proxy_row_key_sha256": "b4ece5a0a097897d559fb7352b5f2d438bc4af27cbdb643237bf92a38985ba81",
+  "candidate_manifest_sha256": "708e0bc66bd55c03065e3eabee4182ee1cbf6e71d6eb9969502b374b6323e788",
+  "detector_fitting_here": false,
+  "threshold_selection_here": false,
+  "val_calib_status": "RESERVED",
+  "official_test_status": "SEALED"
+}

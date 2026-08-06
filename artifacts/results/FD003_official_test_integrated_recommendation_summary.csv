@@ -1,0 +1,7 @@
+scope,recommendation,count,fraction,n_rows,n_engines
+all_observed_rows,CONTINUE,15528,0.935647143890094,16596,100
+all_observed_rows,INSPECT,1030,0.062063147746444926,16596,100
+all_observed_rows,STOP,38,0.002289708363461075,16596,100
+final_snapshot,CONTINUE,65,0.65,100,100
+final_snapshot,INSPECT,29,0.29,100,100
+final_snapshot,STOP,6,0.06,100,100

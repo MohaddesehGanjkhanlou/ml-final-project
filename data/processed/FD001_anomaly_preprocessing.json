@@ -1,0 +1,24 @@
+{
+  "subset": "FD001",
+  "artifact_type": "anomaly_preprocessing_contract",
+  "official_source": "train",
+  "internal_fit_role": "anomaly_fit_train",
+  "healthy_boundary": 125,
+  "healthy_rule": "uncapped RUL > 125",
+  "boundary_reason": "Primary RUL>125 boundary is feasible for every fit/reference engine.",
+  "fit_engines": 52,
+  "reference_engines": 18,
+  "healthy_fit_rows": 3867,
+  "healthy_reference_rows": 1820,
+  "raw_feature_count": 24,
+  "transformed_feature_count": 17,
+  "bundle_path": "artifacts/models/FD001_anomaly_preprocessing_bundle.joblib",
+  "bundle_sha256": "c3f841a3f8bb21cf5921ba5d0cd630d49e773a97b334191082cf7fbbbb86a8ce",
+  "detector_status": "not_fitted",
+  "official_test_status": "sealed",
+  "caveats": [
+    "RUL is used only to select a healthy TRAIN fitting region.",
+    "Detector fitting itself receives no failure label.",
+    "Unknown initial wear means early-life healthy status is a defensible proxy, not perfect ground truth."
+  ]
+}

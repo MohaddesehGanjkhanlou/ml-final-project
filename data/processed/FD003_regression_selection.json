@@ -1,0 +1,117 @@
+{
+  "artifact_type": "regression_val_tune_selection_contract",
+  "artifact_version": 1,
+  "calibration_role_accessed": false,
+  "candidate_count": 24,
+  "feature_candidate_ids": [
+    "baseline__settings_0",
+    "window5__settings_0",
+    "window15__settings_0",
+    "window30__settings_0",
+    "baseline__settings_1",
+    "window5__settings_1",
+    "window15__settings_1",
+    "window30__settings_1"
+  ],
+  "feature_pipeline_bundle": {
+    "path": "artifacts/models/FD003_feature_pipeline_candidates.joblib",
+    "sha256": "b42cddc3573fdb3c29c76abbf68c6fe19977e1e0acf2886f437fd30ba6493e9c"
+  },
+  "fit_role": "train",
+  "latent_group_metrics": {
+    "physical_fault_identity_claimed": false,
+    "selection_role": "diagnostic_only",
+    "used_for_selection": false
+  },
+  "model_grid": [
+    {
+      "model_name": "ridge",
+      "parameters": {
+        "alpha": 1.0
+      },
+      "scaled_features": true
+    },
+    {
+      "model_name": "random_forest",
+      "parameters": {
+        "max_depth": null,
+        "max_features": 0.7,
+        "min_samples_leaf": 2,
+        "n_estimators": 200,
+        "n_jobs": -1,
+        "random_state": 42
+      },
+      "scaled_features": false
+    },
+    {
+      "model_name": "gradient_boosting",
+      "parameters": {
+        "learning_rate": 0.05,
+        "loss": "squared_error",
+        "max_depth": 2,
+        "n_estimators": 200,
+        "random_state": 42
+      },
+      "scaled_features": false
+    }
+  ],
+  "official_test_accessed": false,
+  "official_test_status": "SEALED",
+  "primary_metric": "pooled-row PHM_score_mean",
+  "primary_scope": "VAL-TUNE rows with uncapped true RUL <= 100",
+  "selected_bundle": {
+    "path": "artifacts/models/FD003_regression_selected_precalibration_bundle.joblib",
+    "sha256": "65f7824c8741b7b2c9566e126ae9c59beb8b596db9c6973cf0bce794c167224f"
+  },
+  "selected_candidate": {
+    "candidate_id": "window30__settings_1__model_random_forest",
+    "capped_all_MAE": 4.272309864333611,
+    "capped_all_PHM_score_mean": 1.144580672808657,
+    "capped_all_RMSE": 7.873684523878664,
+    "feature_candidate_id": "window30__settings_1",
+    "fit_seconds": 67.09486039500007,
+    "include_settings": true,
+    "inference_seconds": 0.04599647199938772,
+    "inference_us_per_row": 10.25562363420016,
+    "model_name": "random_forest",
+    "model_parameters_json": "{\"max_depth\": null, \"max_features\": 0.7, \"min_samples_leaf\": 2, \"n_estimators\": 200, \"n_jobs\": -1, \"random_state\": 42}",
+    "n_features": 131,
+    "n_fit_engines": 70,
+    "n_fit_rows": 18219,
+    "n_tune_engines": 20,
+    "n_tune_rows": 4485,
+    "primary_MAE": 7.288749659972865,
+    "primary_PHM_score_mean": 2.2313011305712362,
+    "primary_PHM_score_sum": 4507.228283753897,
+    "primary_R2": 0.8680824253894179,
+    "primary_RMSE": 10.58914247798162,
+    "primary_engine_equal_weight_PHM": 2.231301130571236,
+    "primary_mean_signed_error": 5.300285634105992,
+    "primary_n_engines": 20,
+    "primary_n_rows": 2020,
+    "primary_scope": "VAL-TUNE rows with true RUL <= 100",
+    "representation": "window",
+    "scaled_features": false,
+    "selection_rank": 1,
+    "window": 30
+  },
+  "selected_candidate_id": "window30__settings_1__model_random_forest",
+  "selection_role": "val_tune",
+  "subset": "FD003",
+  "target": {
+    "name": "RUL",
+    "prediction_clip": [
+      0.0,
+      100.0
+    ],
+    "training_cap": 100.0
+  },
+  "tie_break_order": [
+    "primary_PHM_score_mean",
+    "primary_engine_equal_weight_PHM",
+    "primary_RMSE",
+    "primary_MAE",
+    "fit_seconds",
+    "candidate_id"
+  ]
+}

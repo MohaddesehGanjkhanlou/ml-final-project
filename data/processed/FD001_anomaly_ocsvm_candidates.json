@@ -1,0 +1,26 @@
+{
+  "subset": "FD001",
+  "family": "ocsvm",
+  "candidate_count": 6,
+  "candidate_ids": [
+    "ocsvm_nu0p01_gamma_scale",
+    "ocsvm_nu0p01_gamma_0p01",
+    "ocsvm_nu0p05_gamma_scale",
+    "ocsvm_nu0p05_gamma_0p01",
+    "ocsvm_nu0p1_gamma_scale",
+    "ocsvm_nu0p1_gamma_0p01"
+  ],
+  "healthy_boundary": 125,
+  "available_fit_rows": 3867,
+  "selected_fit_rows": 3867,
+  "sample_cap": 20000,
+  "used_all_fit_rows": true,
+  "sample_rows_sha256": "8e718f66cfae8476cc9866fbe7ae44d2a568b3d1f06b78e0b515e1d5efb43952",
+  "reference_rows": 1820,
+  "engine_balanced_rows": 432,
+  "bundle": "artifacts/models/FD001_anomaly_ocsvm_candidates.joblib",
+  "bundle_sha256": "9da172d01659b8a0715b0d3cdeac21fa56b81cd499d20d33ef35d08955a285a1",
+  "selection_status": "PENDING_VAL_TUNE",
+  "val_calib_status": "RESERVED",
+  "official_test_status": "SEALED"
+}

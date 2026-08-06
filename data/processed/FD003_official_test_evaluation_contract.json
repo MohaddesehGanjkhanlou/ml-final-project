@@ -1,0 +1,142 @@
+{
+  "anomaly_rules": {
+    "action_horizon_cycles": 30,
+    "candidate_id": "iforest_n200_ms_0p5",
+    "cutoff": 0.99,
+    "family": "iforest",
+    "healthy_proxy_boundary": "RUL > 125",
+    "official_test_censoring": {
+      "lead_time_if_alerted": "virtual_failure_cycle_minus_tau",
+      "no_alert_by_observation_end": "right_censored_not_confirmed_miss",
+      "run_to_failure_asymmetric_cost": "not_reported_for_censored_test"
+    },
+    "persistence": {
+      "alert_latching": "persistent alert remains active after first satisfaction",
+      "cycle_gap_rule": "reset rolling persistence state",
+      "m": 5,
+      "n": 10
+    },
+    "raw_score_is_probability": false,
+    "reference_type": "pooled",
+    "score_direction": "larger_is_more_abnormal",
+    "status": "LOCKED"
+  },
+  "artifact_type": "official_test_evaluation_contract",
+  "artifact_version": 1,
+  "classification_rules": {
+    "horizons": [
+      10,
+      20,
+      30
+    ],
+    "labels": {
+      "10": "RUL <= 10",
+      "20": "RUL <= 20",
+      "30": "RUL <= 30"
+    },
+    "metrics": [
+      "PR_AUC",
+      "ROC_AUC",
+      "Brier",
+      "precision",
+      "recall",
+      "F1",
+      "confusion_matrix",
+      "asymmetric_cost"
+    ],
+    "monotonicity_rule": "P10 <= P20 <= P30",
+    "primary_official_scope": "all_observed_rows",
+    "probability_stage": "Platt plus cumulative-max monotonicity",
+    "secondary_scope": "one_final_observed_snapshot_per_engine",
+    "status": "LOCKED",
+    "threshold_cost": {
+      "false_negative": 10.0,
+      "false_positive": 1.0
+    },
+    "thresholds": {
+      "10": 0.15202568907053304,
+      "20": 0.052137494213097275,
+      "30": 0.07738555983584257
+    }
+  },
+  "created_before_official_test_access": true,
+  "frozen_artifacts": {
+    "anomaly_policy_bundle": {
+      "path": "artifacts/models/FD003_anomaly_policy_bundle.joblib",
+      "sha256": "5c180962220766359600cf816f63e2815bf669d000681387e9409a091ae2dde4"
+    },
+    "anomaly_policy_selection": {
+      "path": "data/processed/FD003_task6_selected_anomaly_policy.json",
+      "sha256": "703ecc1947b68a11658aac02e2e638e551d10c30266191e67e3786a79c86f54b"
+    },
+    "classification_bundle": {
+      "path": "artifacts/models/FD003_classification_bundle.joblib",
+      "sha256": "feb6c58419ed6aa6e604ba43af94b35b82dd3c2e628af16d7e7b696cab6120a3"
+    },
+    "classification_threshold_contract": {
+      "path": "data/processed/FD003_classification_thresholds.json",
+      "sha256": "6fc773d35bd30e0ec02bb2cd8d2c736efc2280be7f64922d3eec6ca77b6904a9"
+    },
+    "regression_bundle": {
+      "path": "artifacts/models/FD003_regression_bundle.joblib",
+      "sha256": "07b1ff9c4c812d5933a946f0501040e6878d0460d872771ef0825618c415cf07"
+    },
+    "rul_conformal_contract": {
+      "path": "data/processed/FD003_rul_conformal.json",
+      "sha256": "4de22bd94ffbbe23975e9f777275735b01f3487a9177b850f77fcc7092d039fb"
+    }
+  },
+  "governance": {
+    "development_readiness": {
+      "path": "data/processed/FD003_development_readiness.json",
+      "sha256": "ece6598fa7e750ffa20931f695da45627a3d5de092c277023f63247d5e85289e"
+    },
+    "hyperparameter_tuning_on_official_test": false,
+    "model_refitting_on_official_test": false,
+    "policy_reselection_on_official_test": false,
+    "test_outcome_optimization": false,
+    "threshold_recalculation_on_official_test": false
+  },
+  "official_test_gate": {
+    "content_accessed_before_contract": false,
+    "current_status": "SEALED",
+    "evaluation_authorized": false,
+    "expected_test_engines": 100,
+    "next_status": "READY_TO_UNSEAL"
+  },
+  "regression_rules": {
+    "conformal": {
+      "coverage_target": 0.9,
+      "interval_clipping": "lower_at_zero_upper_at_cap",
+      "method": "split conformal absolute residual",
+      "residual_quantile": 19.95934920634916
+    },
+    "include_settings": true,
+    "metrics": [
+      "PHM_score_mean",
+      "PHM_score_sum",
+      "MAE",
+      "RMSE",
+      "R2",
+      "mean_signed_error"
+    ],
+    "model_name": "random_forest",
+    "prediction_lower_bound": 0.0,
+    "prediction_upper_bound": 100.0,
+    "primary_official_scope": "one_final_observed_snapshot_per_engine",
+    "representation": "window",
+    "scaled_features": false,
+    "status": "LOCKED",
+    "target": "row_RUL",
+    "target_cap_cycles": 100.0,
+    "window": 30
+  },
+  "subset": "FD003",
+  "uncertainty_rules": {
+    "bootstrap_draws": 1000,
+    "confidence_interval": "percentile_95",
+    "resampling_unit": "engine_id",
+    "seed": 42,
+    "status": "LOCKED"
+  }
+}

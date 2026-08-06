@@ -1,0 +1,174 @@
+{
+  "artifact_type": "causal_feature_pipeline_contract",
+  "artifact_version": 1,
+  "calibration_role": "val_calib",
+  "candidate_grid": [
+    {
+      "candidate_id": "baseline__settings_0",
+      "include_settings": false,
+      "representation": "baseline",
+      "window": 1
+    },
+    {
+      "candidate_id": "window5__settings_0",
+      "include_settings": false,
+      "representation": "window",
+      "window": 5
+    },
+    {
+      "candidate_id": "window15__settings_0",
+      "include_settings": false,
+      "representation": "window",
+      "window": 15
+    },
+    {
+      "candidate_id": "window30__settings_0",
+      "include_settings": false,
+      "representation": "window",
+      "window": 30
+    },
+    {
+      "candidate_id": "baseline__settings_1",
+      "include_settings": true,
+      "representation": "baseline",
+      "window": 1
+    },
+    {
+      "candidate_id": "window5__settings_1",
+      "include_settings": true,
+      "representation": "window",
+      "window": 5
+    },
+    {
+      "candidate_id": "window15__settings_1",
+      "include_settings": true,
+      "representation": "window",
+      "window": 15
+    },
+    {
+      "candidate_id": "window30__settings_1",
+      "include_settings": true,
+      "representation": "window",
+      "window": 30
+    }
+  ],
+  "causality_test": {
+    "all_candidates_passed": true,
+    "method": "perturb all future input values after a cutoff and verify earlier features remain unchanged"
+  },
+  "feature_windows": [
+    5,
+    15,
+    30
+  ],
+  "fit_engine_ids": [
+    1,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    16,
+    17,
+    18,
+    19,
+    20,
+    23,
+    25,
+    26,
+    27,
+    28,
+    29,
+    31,
+    32,
+    34,
+    35,
+    36,
+    37,
+    39,
+    40,
+    41,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    50,
+    51,
+    54,
+    55,
+    56,
+    57,
+    62,
+    63,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    73,
+    74,
+    77,
+    78,
+    79,
+    81,
+    82,
+    84,
+    86,
+    89,
+    90,
+    91,
+    94,
+    96,
+    97,
+    98,
+    100
+  ],
+  "fit_role": "train",
+  "keep_sensors": [
+    "sensor_2",
+    "sensor_3",
+    "sensor_4",
+    "sensor_6",
+    "sensor_7",
+    "sensor_8",
+    "sensor_9",
+    "sensor_10",
+    "sensor_11",
+    "sensor_12",
+    "sensor_13",
+    "sensor_14",
+    "sensor_15",
+    "sensor_17",
+    "sensor_20",
+    "sensor_21"
+  ],
+  "keep_settings": [
+    "op_setting_1",
+    "op_setting_2"
+  ],
+  "latent_groups_used_as_features": false,
+  "official_test_accessed": false,
+  "official_test_status": "SEALED",
+  "pipeline_bundle": {
+    "path": "artifacts/models/FD003_feature_pipeline_candidates.joblib",
+    "sha256": "b42cddc3573fdb3c29c76abbf68c6fe19977e1e0acf2886f437fd30ba6493e9c"
+  },
+  "require_cycle_continuity": true,
+  "scaler_fit_role": "train",
+  "selection_role": "val_tune",
+  "shuffled_input_alignment": {
+    "all_candidates_passed": true
+  },
+  "source_module_tests_passed": true,
+  "subset": "FD003"
+}

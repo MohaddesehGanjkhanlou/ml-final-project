@@ -1,0 +1,15 @@
+{
+  "artifact_count": 15,
+  "artifact_type": "functional_completion_readiness",
+  "artifact_version": 1,
+  "completion_percentage": 100.0,
+  "dashboard_parity": true,
+  "failed_checks": 0,
+  "passed_checks": 23,
+  "selected_normalization": "condition_aware",
+  "selected_regression_model": "rf",
+  "status": "FUNCTIONALLY_COMPLETE",
+  "subset": "FD004",
+  "total_checks": 23,
+  "verified_artifacts": 15
+}

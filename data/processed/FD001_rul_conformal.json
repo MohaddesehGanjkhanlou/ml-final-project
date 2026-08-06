@@ -1,0 +1,37 @@
+{
+  "calibration_diagnostic": {
+    "average_width_cycles": 28.438217496379444,
+    "empirical_coverage": 0.9007897334649556
+  },
+  "coverage_target": 0.9,
+  "fit_engine_ids": [
+    19,
+    23,
+    32,
+    43,
+    56,
+    70,
+    71,
+    73,
+    84,
+    97
+  ],
+  "fit_role": "official_train/val_calib",
+  "interpretation": "Pointwise marginal interval. Independent empirical coverage must be reported on the locked official test set.",
+  "method": "split_conformal_absolute_residual",
+  "n_fit_engines": 10,
+  "n_fit_rows": 2026,
+  "official_test_status": "sealed",
+  "regression_bundle": {
+    "path": "artifacts/models/FD001_regression_bundle.joblib",
+    "sha256": "091009e2b1aff9b77ea0378d91105c6715f311c2cc31fe2a99a452843fbac9a6"
+  },
+  "residual_quantile": 18.413393217043065,
+  "schema_version": 1,
+  "subset": "FD001",
+  "target": {
+    "cap": 100,
+    "name": "capped_RUL",
+    "unit": "cycles"
+  }
+}

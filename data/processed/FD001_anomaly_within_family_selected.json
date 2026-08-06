@@ -1,0 +1,166 @@
+{
+  "contract_version": 1,
+  "subset": "FD001",
+  "selection_partition": "val_tune",
+  "selection_metric": "pooled raw-score proxy ROC-AUC",
+  "tie_tolerance": 1e-12,
+  "runtime_tolerance_seconds": 1e-06,
+  "selected_within_family": {
+    "iforest": "iforest_n200_ms_0p5",
+    "lof": "lof_k50",
+    "ocsvm": "ocsvm_nu0p05_gamma_0p01",
+    "pca": "pca_evr0p95"
+  },
+  "selection_audit": {
+    "iforest": {
+      "best_raw_proxy_auc": 0.999890633304714,
+      "stage_a_max_auc_within_tolerance": [
+        "iforest_n200_ms_0p5"
+      ],
+      "best_per_engine_auc_median": 1.0,
+      "stage_b_max_engine_median_within_tolerance": [
+        "iforest_n200_ms_0p5"
+      ],
+      "best_total_runtime_seconds": 0.4296448670011158,
+      "stage_c_min_runtime_within_tolerance": [
+        "iforest_n200_ms_0p5"
+      ],
+      "winner": "iforest_n200_ms_0p5"
+    },
+    "lof": {
+      "best_raw_proxy_auc": 0.9993202910993908,
+      "stage_a_max_auc_within_tolerance": [
+        "lof_k50"
+      ],
+      "best_per_engine_auc_median": 1.0,
+      "stage_b_max_engine_median_within_tolerance": [
+        "lof_k50"
+      ],
+      "best_total_runtime_seconds": 0.1977171349990384,
+      "stage_c_min_runtime_within_tolerance": [
+        "lof_k50"
+      ],
+      "winner": "lof_k50"
+    },
+    "ocsvm": {
+      "best_raw_proxy_auc": 0.9999529825422137,
+      "stage_a_max_auc_within_tolerance": [
+        "ocsvm_nu0p05_gamma_0p01"
+      ],
+      "best_per_engine_auc_median": 1.0,
+      "stage_b_max_engine_median_within_tolerance": [
+        "ocsvm_nu0p05_gamma_0p01"
+      ],
+      "best_total_runtime_seconds": 0.0782502150032086,
+      "stage_c_min_runtime_within_tolerance": [
+        "ocsvm_nu0p05_gamma_0p01"
+      ],
+      "winner": "ocsvm_nu0p05_gamma_0p01"
+    },
+    "pca": {
+      "best_raw_proxy_auc": 0.6847653215585265,
+      "stage_a_max_auc_within_tolerance": [
+        "pca_evr0p95"
+      ],
+      "best_per_engine_auc_median": 0.632887309607092,
+      "stage_b_max_engine_median_within_tolerance": [
+        "pca_evr0p95"
+      ],
+      "best_total_runtime_seconds": 0.0297616019997802,
+      "stage_c_min_runtime_within_tolerance": [
+        "pca_evr0p95"
+      ],
+      "winner": "pca_evr0p95"
+    }
+  },
+  "selected_metrics": [
+    {
+      "candidate_id": "iforest_n200_ms_0p5",
+      "family": "iforest",
+      "parameters_json": "{\"max_samples\": 0.5, \"n_estimators\": 200}",
+      "proxy_auc_raw": 0.999890633304714,
+      "proxy_auc_pooled_percentile": 0.9998880780080952,
+      "proxy_auc_engine_balanced_percentile": 0.9980339547814708,
+      "pooled_percentile_auc_minus_raw": -2.555296618966807e-06,
+      "engine_balanced_percentile_auc_minus_raw": -0.0018566785232431,
+      "per_engine_auc_mean": 0.9998487903225806,
+      "per_engine_auc_median": 1.0,
+      "per_engine_auc_min": 0.9969758064516128,
+      "per_engine_auc_max": 1.0,
+      "train_fit_time_seconds": 0.3724268639998627,
+      "reference_score_time_seconds": 0.0284184780011855,
+      "val_tune_score_time_seconds": 0.0287995250000676,
+      "total_runtime_seconds": 0.4296448670011158,
+      "val_tune_inference_us_per_row": 13.10260464061313,
+      "selected_within_family": true
+    },
+    {
+      "candidate_id": "lof_k50",
+      "family": "lof",
+      "parameters_json": "{\"n_neighbors\": 50, \"novelty\": true}",
+      "proxy_auc_raw": 0.9993202910993908,
+      "proxy_auc_pooled_percentile": 0.9990872480477536,
+      "proxy_auc_engine_balanced_percentile": 0.999068338852774,
+      "pooled_percentile_auc_minus_raw": -0.0002330430516372,
+      "engine_balanced_percentile_auc_minus_raw": -0.0002519522466167,
+      "per_engine_auc_mean": 0.9990470118292698,
+      "per_engine_auc_median": 1.0,
+      "per_engine_auc_min": 0.9873271889400922,
+      "per_engine_auc_max": 1.0,
+      "train_fit_time_seconds": 0.0995568529997399,
+      "reference_score_time_seconds": 0.0458690310006204,
+      "val_tune_score_time_seconds": 0.0522912509986781,
+      "total_runtime_seconds": 0.1977171349990384,
+      "val_tune_inference_us_per_row": 23.790378070372224,
+      "selected_within_family": true
+    },
+    {
+      "candidate_id": "ocsvm_nu0p05_gamma_0p01",
+      "family": "ocsvm",
+      "parameters_json": "{\"gamma\": 0.01, \"kernel\": \"rbf\", \"nu\": 0.05}",
+      "proxy_auc_raw": 0.9999529825422137,
+      "proxy_auc_pooled_percentile": 0.9990090559712173,
+      "proxy_auc_engine_balanced_percentile": 0.9990080338525696,
+      "pooled_percentile_auc_minus_raw": -0.0009439265709964,
+      "engine_balanced_percentile_auc_minus_raw": -0.0009449486896438,
+      "per_engine_auc_mean": 1.0,
+      "per_engine_auc_median": 1.0,
+      "per_engine_auc_min": 1.0,
+      "per_engine_auc_max": 1.0,
+      "train_fit_time_seconds": 0.0376545680010167,
+      "reference_score_time_seconds": 0.0168252350013062,
+      "val_tune_score_time_seconds": 0.0237704120008857,
+      "total_runtime_seconds": 0.0782502150032086,
+      "val_tune_inference_us_per_row": 10.814564149629526,
+      "selected_within_family": true
+    },
+    {
+      "candidate_id": "pca_evr0p95",
+      "family": "pca",
+      "parameters_json": "{\"evr_target\": 0.95}",
+      "proxy_auc_raw": 0.6847653215585265,
+      "proxy_auc_pooled_percentile": 0.6847331248211292,
+      "proxy_auc_engine_balanced_percentile": 0.6845072366000244,
+      "pooled_percentile_auc_minus_raw": -3.219673739729423e-05,
+      "engine_balanced_percentile_auc_minus_raw": -0.0002580849585021,
+      "per_engine_auc_mean": 0.6871500528177192,
+      "per_engine_auc_median": 0.632887309607092,
+      "per_engine_auc_min": 0.3476702508960573,
+      "per_engine_auc_max": 0.9561684314208324,
+      "train_fit_time_seconds": 0.0229235989991138,
+      "reference_score_time_seconds": 0.0037779960002808,
+      "val_tune_score_time_seconds": 0.0030600070003856,
+      "total_runtime_seconds": 0.0297616019997802,
+      "val_tune_inference_us_per_row": 1.3921778891654537,
+      "selected_within_family": true
+    }
+  ],
+  "proxy_row_key_sha256": "b4ece5a0a097897d559fb7352b5f2d438bc4af27cbdb643237bf92a38985ba81",
+  "candidate_manifest_sha256": "708e0bc66bd55c03065e3eabee4182ee1cbf6e71d6eb9969502b374b6323e788",
+  "selected_bundle": "artifacts/models/FD001_anomaly_selected_family_bundle.joblib",
+  "selected_bundle_sha256": "001c1f43ada038f4541876a8eaa595a62d540ffbb548b34240cc781c3dec29e1",
+  "threshold_status": "PENDING_VAL_CALIB",
+  "persistence_status": "PENDING_VAL_CALIB",
+  "val_calib_status": "RESERVED",
+  "official_test_status": "SEALED"
+}

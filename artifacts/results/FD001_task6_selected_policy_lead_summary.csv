@@ -1,0 +1,2 @@
+n_engines,missed_engines,minimum_lead_time,lead_time_p25,median_lead_time,lead_time_p75,maximum_lead_time,mean_lead_time,mean_total_cost,mean_early_burden,mean_late_delay
+10,0,30.0,41.75,55.5,67.25,91.0,57.7,0.6833333333333333,27.7,0.0

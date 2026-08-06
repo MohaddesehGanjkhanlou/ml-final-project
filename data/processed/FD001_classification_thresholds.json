@@ -1,0 +1,27 @@
+{
+  "subset": "FD001",
+  "task": "row_level_failure_horizon_thresholds",
+  "probability_stage": "horizon-specific Platt calibration followed by cumulative-maximum monotonicity correction",
+  "selection_partition": "val_calib",
+  "primary_cost": {
+    "false_negative": 10.0,
+    "false_positive": 1.0
+  },
+  "cost_ordering": "false_negative > false_positive",
+  "tie_break": "lowest threshold",
+  "primary_thresholds": {
+    "10": 0.11340399728926802,
+    "20": 0.22290462955112206,
+    "30": 0.11654045954796569
+  },
+  "source_calibrated_bundle_sha256": "691365850174ecdb465d6ca4a827c226b7760ab9b0fbe7df8fcbf5da8073195a",
+  "classification_bundle_path": "artifacts/models/FD001_classification_bundle.joblib",
+  "classification_bundle_sha256": "9f54d9da77012489642d366edad8ee33e391f931649e837fc296c4c679eac157",
+  "engine_level_policy_status": "pending",
+  "official_test_status": "sealed",
+  "interpretation": [
+    "Thresholds minimize row-level asymmetric cost on VAL-CALIB.",
+    "They are not the final persistent engine-level maintenance policy.",
+    "Metrics on VAL-CALIB are in-sample threshold diagnostics, not independent test results."
+  ]
+}

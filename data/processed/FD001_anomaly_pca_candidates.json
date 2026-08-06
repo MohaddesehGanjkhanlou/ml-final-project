@@ -1,0 +1,20 @@
+{
+  "subset": "FD001",
+  "family": "pca",
+  "candidate_count": 3,
+  "candidate_ids": [
+    "pca_evr0p9",
+    "pca_evr0p95",
+    "pca_evr0p99"
+  ],
+  "healthy_boundary": 125,
+  "available_features": 17,
+  "fit_rows": 3867,
+  "reference_rows": 1820,
+  "engine_balanced_rows": 432,
+  "bundle": "artifacts/models/FD001_anomaly_pca_candidates.joblib",
+  "bundle_sha256": "1885993757a5a6efb9763a9c951cc3f059ade6803643f3e227448001dd7ab5cb",
+  "selection_status": "PENDING_VAL_TUNE",
+  "val_calib_status": "RESERVED",
+  "official_test_status": "SEALED"
+}

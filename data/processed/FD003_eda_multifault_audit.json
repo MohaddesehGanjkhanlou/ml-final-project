@@ -1,0 +1,59 @@
+{
+  "artifact_type": "train_only_multifault_eda_audit",
+  "artifact_version": 1,
+  "constant_features": [
+    "op_setting_3",
+    "sensor_1",
+    "sensor_5",
+    "sensor_16",
+    "sensor_18",
+    "sensor_19"
+  ],
+  "degradation_signature": {
+    "definition": "per-engine late-life mean minus early-life mean",
+    "early_region": "life_fraction <= 0.20",
+    "feature_count": 16,
+    "late_region": "life_fraction >= 0.80"
+  },
+  "fit_role_for_scaler_pca_clustering": "train",
+  "interpretation_policy": {
+    "allowed_language": "latent degradation groups or heterogeneous degradation patterns",
+    "descriptive_only": true,
+    "forbidden_language": "named physical fault modes without ground-truth fault labels",
+    "physical_fault_mode_identity_claimed": false,
+    "used_as_predictive_feature": false
+  },
+  "latent_structure": {
+    "observed_train_groups": [
+      "latent_A",
+      "latent_B"
+    ],
+    "pca_explained_variance_ratio": [
+      0.5731851752596075,
+      0.2018514971872301
+    ],
+    "requested_groups": 2,
+    "train_group_sizes": {
+      "latent_A": 39,
+      "latent_B": 31
+    },
+    "train_silhouette": 0.5075011952698976
+  },
+  "near_constant_features": [
+    "op_setting_3",
+    "sensor_1",
+    "sensor_5",
+    "sensor_16",
+    "sensor_18",
+    "sensor_19"
+  ],
+  "official_test_accessed": false,
+  "raw_feature_count": 24,
+  "source_roles_used": [
+    "train",
+    "val_tune",
+    "val_calib"
+  ],
+  "subset": "FD003",
+  "variable_sensor_count": 16
+}

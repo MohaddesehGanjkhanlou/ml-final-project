@@ -1,0 +1,15 @@
+evaluation_scope,resampling_unit,metric,point_estimate,bootstrap_mean,ci_95_lower,ci_95_upper,valid_draws,invalid_draws,censoring_aware
+official_test_truncated_trajectories,engine_id,fraction_alerted_before_observation_end,0.31,0.30751999999999996,0.22,0.39,1000,0,True
+official_test_truncated_trajectories,engine_id,fraction_censored_no_alert_by_observation_end,0.69,0.6924799999999999,0.61,0.78,1000,0,True
+official_test_truncated_trajectories,engine_id,mean_lead_time_if_alerted,53.483870967741936,53.735930839631806,46.05675595238095,62.3003125,1000,0,True
+official_test_truncated_trajectories,engine_id,median_lead_time_if_alerted,52.0,52.6475,47.0,58.5,1000,0,True
+official_test_truncated_trajectories,engine_id,fraction_all_engines_alert_with_30_cycle_action_time,0.26,0.25843,0.17,0.34,1000,0,True
+official_test_truncated_trajectories,engine_id,fraction_alerted_engines_with_30_cycle_action_time,0.8387096774193549,0.8401873300279274,0.696969696969697,0.9600384615384615,1000,0,True
+official_test_truncated_trajectories,engine_id,fraction_alerted_inside_30_cycle_action_horizon,0.16129032258064516,0.15981266997207255,0.039961538461538465,0.30303030303030304,1000,0,True
+official_test_truncated_trajectories,engine_id,healthy_proxy_first_alert_fraction_all_engines,0.01,0.01039,0.0,0.03,1000,0,True
+official_test_truncated_trajectories,engine_id,healthy_proxy_first_alert_fraction_alerted,0.03225806451612903,0.03367557841975478,0.0,0.10344827586206896,1000,0,True
+official_test_truncated_trajectories,engine_id,mean_final_observed_anomaly_percentile,0.7463296703296705,0.7461373461538461,0.685663598901099,0.798668543956044,1000,0,True
+official_test_truncated_trajectories,engine_id,fraction_final_percentile_above_cutoff,0.34,0.33849,0.25,0.43,1000,0,True
+official_test_truncated_trajectories,engine_id,healthy_row_raw_crossing_rate,0.011695171026156942,0.011735850717480187,0.008596601608232458,0.015692880508091603,1000,0,True
+official_test_truncated_trajectories,engine_id,near_failure_row_raw_crossing_rate,0.9126506024096386,0.9106777000421251,0.8262210919203747,0.971100348153454,1000,0,True
+official_test_truncated_trajectories,engine_id,healthy_vs_near_failure_raw_score_ROC_AUC,0.9896051762381518,0.9893741572030603,0.9769934651051392,0.9975981307700196,1000,0,True

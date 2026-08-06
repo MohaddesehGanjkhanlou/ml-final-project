@@ -1,0 +1,4 @@
+engine_id,observation_end_cycle,final_RUL,virtual_failure_cycle,first_persistent_alert_cycle,alerted_before_observation_end,lead_time_to_virtual_failure,RUL_at_first_persistent_alert,final_observed_anomaly_percentile,final_observed_raw_score,censoring_status,n_cycle_gaps,trace_role
+26,130,11,141,120.0,1,21.0,21.0,1.0,0.1722467089830122,ALERTED_BEFORE_OBSERVATION_END,0,minimum_lead
+78,279,20,299,243.0,1,56.0,56.0,1.0,0.22383854622971044,ALERTED_BEFORE_OBSERVATION_END,0,median_representative
+96,358,113,471,320.0,1,151.0,151.0,0.9994680285136717,0.10986156507185318,ALERTED_BEFORE_OBSERVATION_END,0,maximum_lead

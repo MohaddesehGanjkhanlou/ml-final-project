@@ -1,0 +1,7 @@
+scope,primary_reason,count,fraction
+final_snapshot,NO_FROZEN_WARNING_RULE_ACTIVE,65,0.65
+final_snapshot,CLASSIFICATION_H20_POSITIVE,12,0.12
+final_snapshot,CLASSIFICATION_H30_POSITIVE,8,0.08
+final_snapshot,CLASSIFICATION_H10_POSITIVE,6,0.06
+final_snapshot,PERSISTENT_ANOMALY_ALERT,5,0.05
+final_snapshot,RUL_INTERVAL_REACHES_30,4,0.04

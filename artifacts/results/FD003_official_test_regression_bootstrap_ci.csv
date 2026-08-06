@@ -1,0 +1,10 @@
+evaluation_scope,resampling_unit,metric,point_estimate,bootstrap_mean,ci_95_lower,ci_95_upper,valid_draws,invalid_draws
+official_test_final_snapshot_uncapped_RUL,engine_id,PHM_score_mean,5.720643061968588,5.672593366399727,3.4958661220541005,8.165867099049347,1000,0
+official_test_final_snapshot_uncapped_RUL,engine_id,PHM_score_sum,572.0643061968589,567.2593366399726,349.58661220541006,816.5867099049347,1000,0
+official_test_final_snapshot_uncapped_RUL,engine_id,MAE,13.816934294733043,13.811768168704905,11.149528912427849,16.492687626488095,1000,0
+official_test_final_snapshot_uncapped_RUL,engine_id,RMSE,19.25387921426643,19.14865300207062,15.684423369888778,22.21948905060831,1000,0
+official_test_final_snapshot_uncapped_RUL,engine_id,R2,0.7836645751618928,0.7805933237346222,0.7094964325242868,0.844364844312943,1000,0
+official_test_final_snapshot_uncapped_RUL,engine_id,conformal_coverage_capped_target,0.95,0.94943,0.9,0.99,1000,0
+official_test_final_snapshot_uncapped_RUL,engine_id,conformal_coverage_uncapped_RUL,0.64,0.6395,0.54,0.74,1000,0
+official_test_final_snapshot_uncapped_RUL,engine_id,conformal_average_width,31.27534576659445,31.23570876143392,29.55018575293103,32.79333280551039,1000,0
+official_test_final_snapshot_uncapped_RUL,engine_id,mean_signed_error_pred_minus_true,-5.916347516233768,-5.935964222424244,-9.300071926812773,-2.422785863861832,1000,0

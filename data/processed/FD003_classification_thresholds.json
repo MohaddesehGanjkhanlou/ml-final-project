@@ -1,0 +1,81 @@
+{
+  "base_classifier_refit": false,
+  "calibrator_fit_count": 3,
+  "classification_bundle_path": "artifacts/models/FD003_classification_bundle.joblib",
+  "classification_bundle_sha256": "feb6c58419ed6aa6e604ba43af94b35b82dd3c2e628af16d7e7b696cab6120a3",
+  "cost_ordering": "minimum total asymmetric cost",
+  "engine_level_policy_status": "not_selected",
+  "horizons": [
+    10,
+    20,
+    30
+  ],
+  "interpretation": [
+    "Thresholds were selected only on reserved VAL-CALIB.",
+    "False negatives cost ten times as much as false positives.",
+    "Official Test was not used for calibration or threshold selection."
+  ],
+  "official_test_status": "sealed",
+  "primary_cost": {
+    "false_negative": 10.0,
+    "false_positive": 1.0
+  },
+  "primary_thresholds": {
+    "10": 0.15202568907053304,
+    "20": 0.052137494213097275,
+    "30": 0.07738555983584257
+  },
+  "probability_stage": "Platt plus monotonicity",
+  "selected_threshold_metrics": [
+    {
+      "cost_per_row": 0.02628968253968254,
+      "f1": 0.8605577689243028,
+      "false_negative_cost": 20.0,
+      "false_positive_cost": 33.0,
+      "fn": 2.0,
+      "fp": 33.0,
+      "horizon": 10.0,
+      "precision": 0.7659574468085106,
+      "recall": 0.9818181818181818,
+      "threshold": 0.15202568907053304,
+      "tn": 1873.0,
+      "total_cost": 53.0,
+      "tp": 108.0
+    },
+    {
+      "cost_per_row": 0.0441468253968254,
+      "f1": 0.825147347740668,
+      "false_negative_cost": 0.0,
+      "false_positive_cost": 89.0,
+      "fn": 0.0,
+      "fp": 89.0,
+      "horizon": 20.0,
+      "precision": 0.7023411371237458,
+      "recall": 1.0,
+      "threshold": 0.052137494213097275,
+      "tn": 1717.0,
+      "total_cost": 89.0,
+      "tp": 210.0
+    },
+    {
+      "cost_per_row": 0.09077380952380952,
+      "f1": 0.7887323943661972,
+      "false_negative_cost": 20.0,
+      "false_positive_cost": 163.0,
+      "fn": 2.0,
+      "fp": 163.0,
+      "horizon": 30.0,
+      "precision": 0.6539278131634819,
+      "recall": 0.9935483870967742,
+      "threshold": 0.07738555983584257,
+      "tn": 1543.0,
+      "total_cost": 183.0,
+      "tp": 308.0
+    }
+  ],
+  "selection_partition": "val_calib",
+  "source_precalibration_bundle_sha256": "b587a2d2f215f38a1260b6c09785f28c64f181cef5e4d078ff206e503bf0767d",
+  "subset": "FD003",
+  "task": "failure-horizon classification",
+  "tie_break": "lowest threshold"
+}

@@ -1,0 +1,15 @@
+metric,point_estimate,interpretation,censoring_aware,asymmetric_run_to_failure_cost_reported
+fraction_alerted_before_observation_end,0.31,Observed persistent-alert fraction; not a detection rate at failure.,True,False
+fraction_censored_no_alert_by_observation_end,0.69,No alert observed before truncation; not a confirmed miss.,True,False
+mean_lead_time_if_alerted,53.483870967741936,"Mean cycles from first persistent alert to virtual failure, alerted engines only.",True,False
+median_lead_time_if_alerted,52.0,"Median cycles from first persistent alert to virtual failure, alerted engines only.",True,False
+fraction_all_engines_alert_with_30_cycle_action_time,0.26,Fraction of all Test engines alerted with at least 30 cycles of virtual lead.,True,False
+fraction_alerted_engines_with_30_cycle_action_time,0.8387096774193549,"Among alerted engines, fraction with at least 30 cycles of virtual lead.",True,False
+fraction_alerted_inside_30_cycle_action_horizon,0.16129032258064516,"Among alerted engines, fraction first alerted with less than 30 cycles remaining.",True,False
+healthy_proxy_first_alert_fraction_all_engines,0.01,Fraction of all engines first persistently alerted while RUL > 125.,True,False
+healthy_proxy_first_alert_fraction_alerted,0.03225806451612903,"Among alerted engines, fraction first alerted while RUL > 125.",True,False
+mean_final_observed_anomaly_percentile,0.7463296703296705,Mean final percentile relative to frozen TRAIN reference CDF.,True,False
+fraction_final_percentile_above_cutoff,0.34,Fraction whose final observed percentile crosses the frozen raw cutoff.,True,False
+healthy_row_raw_crossing_rate,0.011695171026156942,Raw cutoff crossing rate in RUL > 125 rows.,True,False
+near_failure_row_raw_crossing_rate,0.9126506024096386,Raw cutoff crossing rate in RUL <= 30 rows.,True,False
+healthy_vs_near_failure_raw_score_ROC_AUC,0.9896051762381518,Independent Test proxy discrimination; middle region excluded.,True,False

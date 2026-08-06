@@ -1,0 +1,51 @@
+{
+  "artifact_type": "selected_anomaly_policy",
+  "artifact_version": 1,
+  "frozen_policy_grid_contract": {
+    "path": "data/processed/FD003_task6_policy_contract.json",
+    "sha256": "dfc0583150b9f61b1c64abd081defb361c2a9121e390b1b55a6e58e079c65264"
+  },
+  "manual_override_applied": false,
+  "official_test_accessed": false,
+  "official_test_status": "SEALED",
+  "policy_bundle": {
+    "path": "artifacts/models/FD003_anomaly_policy_bundle.joblib",
+    "sha256": "5c180962220766359600cf816f63e2815bf669d000681387e9409a091ae2dde4"
+  },
+  "selected_policy": {
+    "candidate_id": "iforest_n200_ms_0p5",
+    "cutoff": 0.99,
+    "family": "iforest",
+    "persistence": {
+      "m": 5,
+      "n": 10
+    },
+    "reference_type": "pooled"
+  },
+  "selected_policy_metrics": {
+    "candidate_id": "iforest_n200_ms_0p5",
+    "cutoff": 0.99,
+    "family": "iforest",
+    "healthy_first_trigger_fraction": 0.0,
+    "m": 5,
+    "maximum_lead_time": 73.0,
+    "mean_early_component": 0.4166666666666667,
+    "mean_late_component": 0.13333333333333333,
+    "mean_lead_time": 43.0,
+    "mean_miss_component": 0.0,
+    "mean_raw_early_burden": 13.8,
+    "mean_raw_late_delay": 0.8,
+    "mean_total_cost": 0.55,
+    "median_lead_time": 43.0,
+    "minimum_lead_time": 22.0,
+    "miss_rate": 0.0,
+    "missed_engines": 0,
+    "n": 10,
+    "n_engines": 10,
+    "reference_type": "pooled",
+    "selection_eligible": true,
+    "selection_rank": 1
+  },
+  "selection_partition": "val_calib",
+  "subset": "FD003"
+}

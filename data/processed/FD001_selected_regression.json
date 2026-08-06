@@ -1,0 +1,33 @@
+{
+  "calibration_role": "official_train/val_calib",
+  "cap": 100,
+  "created_at_utc": "2026-08-06T11:34:03.312328+00:00",
+  "fit_role": "official_train/train",
+  "hparams": {
+    "alpha": 0.1
+  },
+  "model": "ridge",
+  "n_features_used": 121,
+  "official_test_status": "sealed",
+  "primary_metric": {
+    "direction": "lower_is_better",
+    "evaluation_region": "uncapped_RUL <= 100",
+    "name": "tune_PHM_mean_dev",
+    "truth_scale": "uncapped_RUL",
+    "value": 3.089822645602356
+  },
+  "random_seed": 42,
+  "representation": "window",
+  "schema_version": 1,
+  "secondary_metrics": {
+    "MAE": 11.202206683041785,
+    "R2": 0.7722048228125987,
+    "RMSE": 13.914952411319671,
+    "near_failure_MAE": 9.401033516452827
+  },
+  "selection_role": "official_train/val_tune",
+  "selection_stage": "initial_regression_screening",
+  "status": "initial screening winner; feature ablations and full-size family comparison still required",
+  "subset": "FD001",
+  "validation_subdivision_contract": "data/splits/FD001_validation_subdivision.json"
+}

@@ -1,0 +1,4 @@
+family,candidate_id,reference_type,cutoff,m,n,selection_eligible,engine_id,failure_cycle,first_satisfaction_cycle,tau,missed,trigger_at_failure_only,lead_time,late_delay,early_burden,late_normalized,early_normalized_uncapped,early_normalized_for_cost,miss_component,late_component,early_component,total_cost,first_trigger_while_healthy,n_cycle_gaps,median_distance,trace_role
+lof,lof_k50,pooled,0.99,5,10,True,43,207,177.0,177.0,False,False,30.0,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,False,0,,minimum_lead
+lof,lof_k50,pooled,0.99,5,10,True,71,208,153.0,153.0,False,False,55.0,0,25,0.0,0.8333333333333334,0.8333333333333334,0.0,0.0,0.8333333333333334,0.8333333333333334,False,0,0.5,median_representative
+lof,lof_k50,pooled,0.99,5,10,True,73,213,122.0,122.0,False,False,91.0,0,61,0.0,2.033333333333333,1.0,0.0,0.0,1.0,1.0,False,0,,maximum_lead

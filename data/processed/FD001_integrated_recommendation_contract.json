@@ -1,0 +1,166 @@
+{
+  "action_horizons_cycles": {
+    "inspection": 30,
+    "urgent_stop": 10
+  },
+  "artifact_type": "integrated_maintenance_recommendation_contract",
+  "artifact_version": 1,
+  "created_at_utc": "2026-08-06T11:38:29.528037+00:00",
+  "governance": {
+    "allowed_use": [
+      "dashboard recommendation",
+      "application integration",
+      "descriptive Official-Test recommendation counts"
+    ],
+    "anomaly_policy_reselection_performed": false,
+    "creation_phase": "post_official_test_unseal_system_integration",
+    "independent_preregistered_combined_policy": false,
+    "interpretation": "The component models and thresholds were frozen before Official-Test access. The deterministic rule combining their outputs was documented after unseal and must not be presented as a preregistered combined policy selected independently of Test visibility.",
+    "model_refitting_performed": false,
+    "probability_recalibration_performed": false,
+    "test_outcome_optimization_performed": false,
+    "threshold_reselection_performed": false
+  },
+  "input_contract": {
+    "anomaly": {
+      "candidate_id": "lof_k50",
+      "cutoff": 0.99,
+      "family": "lof",
+      "persistence": {
+        "alert_latching": true,
+        "cycle_gap_reset": true,
+        "m": 5,
+        "n": 10
+      },
+      "reference_type": "pooled"
+    },
+    "classification": {
+      "decision_rule": "mono_probability >= frozen_threshold",
+      "horizons": [
+        10,
+        20,
+        30
+      ],
+      "probability_stage": "Platt plus cumulative-max monotonicity",
+      "thresholds": {
+        "10": 0.11340399728926802,
+        "20": 0.22290462955112206,
+        "30": 0.11654045954796569
+      }
+    },
+    "regression": {
+      "coverage_target": 0.9,
+      "frozen_residual_quantile": 18.413393217043065,
+      "lower_bound": "conformal_lower",
+      "point_estimate": "predicted_RUL",
+      "upper_bound": "conformal_upper"
+    }
+  },
+  "official_test_inputs_used_to_create_rule": [],
+  "priority_order": [
+    "STOP",
+    "INSPECT",
+    "CONTINUE"
+  ],
+  "reason_reporting": {
+    "primary_reason_order": [
+      "CLASSIFICATION_H10_POSITIVE",
+      "REGRESSION_POINT_RUL_LE_10",
+      "CLASSIFICATION_H20_POSITIVE",
+      "CLASSIFICATION_H30_POSITIVE",
+      "RUL_INTERVAL_REACHES_30",
+      "PERSISTENT_ANOMALY_ALERT",
+      "NO_FROZEN_WARNING_RULE_ACTIVE"
+    ],
+    "retain_all_triggered_reasons": true
+  },
+  "recommendation_levels": [
+    "CONTINUE",
+    "INSPECT",
+    "STOP"
+  ],
+  "rules": {
+    "CONTINUE": {
+      "applies_only_if": "STOP is false and INSPECT is false",
+      "priority": 3,
+      "reason_code": "NO_FROZEN_WARNING_RULE_ACTIVE"
+    },
+    "INSPECT": {
+      "applies_only_if": "STOP is false",
+      "conditions": [
+        {
+          "field": "classification_decision_h20",
+          "operator": "==",
+          "reason_code": "CLASSIFICATION_H20_POSITIVE",
+          "value": 1
+        },
+        {
+          "field": "classification_decision_h30",
+          "operator": "==",
+          "reason_code": "CLASSIFICATION_H30_POSITIVE",
+          "value": 1
+        },
+        {
+          "field": "conformal_lower",
+          "operator": "<=",
+          "reason_code": "RUL_INTERVAL_REACHES_30",
+          "value": 30.0
+        },
+        {
+          "field": "persistent_anomaly_alert",
+          "operator": "==",
+          "reason_code": "PERSISTENT_ANOMALY_ALERT",
+          "value": 1
+        }
+      ],
+      "operator": "ANY",
+      "priority": 2
+    },
+    "STOP": {
+      "conditions": [
+        {
+          "field": "classification_decision_h10",
+          "operator": "==",
+          "reason_code": "CLASSIFICATION_H10_POSITIVE",
+          "value": 1
+        },
+        {
+          "field": "predicted_RUL",
+          "operator": "<=",
+          "reason_code": "REGRESSION_POINT_RUL_LE_10",
+          "value": 10.0
+        }
+      ],
+      "operator": "ANY",
+      "priority": 1
+    }
+  },
+  "source_artifacts": {
+    "anomaly_policy_bundle": {
+      "path": "artifacts/models/FD001_anomaly_policy_bundle.joblib",
+      "sha256": "350270587ae7f544d7ee1957b60d2992baed81b061689c30bdbf673ddcaa0921"
+    },
+    "anomaly_policy_contract": {
+      "path": "data/processed/FD001_task6_policy_contract.json",
+      "sha256": "b60072c985ae5ecc400e292c71eb3b9fcd63551da7956e8a3e46267fc753c016"
+    },
+    "classification_bundle": {
+      "path": "artifacts/models/FD001_classification_bundle.joblib",
+      "sha256": "9f54d9da77012489642d366edad8ee33e391f931649e837fc296c4c679eac157"
+    },
+    "classification_threshold_contract": {
+      "path": "data/processed/FD001_classification_thresholds.json",
+      "sha256": "121352b4d339ccbfd0d592837baf62978537590d320d592ee9e394a61361cf91"
+    },
+    "regression_bundle": {
+      "path": "artifacts/models/FD001_regression_bundle.joblib",
+      "sha256": "091009e2b1aff9b77ea0378d91105c6715f311c2cc31fe2a99a452843fbac9a6"
+    },
+    "rul_conformal_contract": {
+      "path": "data/processed/FD001_rul_conformal.json",
+      "sha256": "c3a19247b7e58ae46bb7c855bb6ce4c249e98f804218d7d05c12accc19815999"
+    }
+  },
+  "status": "FROZEN_FOR_APPLICATION_INTEGRATION",
+  "subset": "FD001"
+}

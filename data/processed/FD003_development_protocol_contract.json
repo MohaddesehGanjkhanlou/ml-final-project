@@ -1,0 +1,198 @@
+{
+  "artifact_type": "multifault_subset_development_protocol",
+  "artifact_version": 1,
+  "dataset_characteristics": {
+    "expected_test_engines": 100,
+    "expected_train_engines": 100,
+    "fault_mode_contract": "two latent fault modes; no supervised fault-mode label is assumed",
+    "operating_condition_contract": "single operating condition"
+  },
+  "development_split": {
+    "method": "deterministic engine-level random permutation",
+    "roles": {
+      "train": {
+        "engine_ids": [
+          1,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          16,
+          17,
+          18,
+          19,
+          20,
+          23,
+          25,
+          26,
+          27,
+          28,
+          29,
+          31,
+          32,
+          34,
+          35,
+          36,
+          37,
+          39,
+          40,
+          41,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          50,
+          51,
+          54,
+          55,
+          56,
+          57,
+          62,
+          63,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          73,
+          74,
+          77,
+          78,
+          79,
+          81,
+          82,
+          84,
+          86,
+          89,
+          90,
+          91,
+          94,
+          96,
+          97,
+          98,
+          100
+        ],
+        "n_engines": 70
+      },
+      "val_calib": {
+        "engine_ids": [
+          15,
+          21,
+          52,
+          61,
+          72,
+          75,
+          83,
+          87,
+          92,
+          93
+        ],
+        "n_engines": 10
+      },
+      "val_tune": {
+        "engine_ids": [
+          2,
+          3,
+          22,
+          24,
+          30,
+          33,
+          38,
+          42,
+          49,
+          53,
+          58,
+          59,
+          60,
+          64,
+          76,
+          80,
+          85,
+          88,
+          95,
+          99
+        ],
+        "n_engines": 20
+      }
+    },
+    "seed": 42,
+    "split_path": "data/processed/FD003_development_engine_split.csv",
+    "split_sha256": "0c41017f0e8343145a9ec1ea4400a30d9dfb21f1fddf8097cd6fc5484a4cd58d"
+  },
+  "multifault_analysis_policy": {
+    "allowed_claim": "Analyze heterogeneous degradation structure and latent subgroups without assigning causal fault-mode identities.",
+    "forbidden_claim": "Do not label inferred clusters as physical fault modes without ground-truth evidence.",
+    "supervised_fault_labels_available": false
+  },
+  "official_test_gate": {
+    "content_accessed_in_this_cell": false,
+    "evaluation_authorized": false,
+    "rul_file": {
+      "content_loaded": false,
+      "exists": true,
+      "file_name": "RUL_FD003.txt",
+      "path": "data/raw/RUL_FD003.txt",
+      "sha256": null,
+      "sha256_computed": false,
+      "size_bytes": 428
+    },
+    "status": "SEALED",
+    "test_file": {
+      "content_loaded": false,
+      "exists": true,
+      "file_name": "test_FD003.txt",
+      "path": "data/raw/test_FD003.txt",
+      "sha256": null,
+      "sha256_computed": false,
+      "size_bytes": 2826651
+    }
+  },
+  "official_train": {
+    "engines": 100,
+    "path": "data/raw/train_FD003.txt",
+    "rows": 24720,
+    "run_to_failure": true,
+    "sha256": "2abbe9968cc5e8eb091980f51b20f62bb4127336d3482cb52071d53bf23329e2"
+  },
+  "planned_tasks": {
+    "anomaly_detection": {
+      "healthy_reference_definition": "RUL > 125, subject to TRAIN-only feasibility verification",
+      "model_selection_role": "val_tune",
+      "policy_selection_role": "val_calib"
+    },
+    "eda_and_multifault_structure": "TRAIN development roles only",
+    "failure_classification": {
+      "calibration_role": "val_calib",
+      "fit_role": "train",
+      "horizons": [
+        10,
+        20,
+        30
+      ],
+      "selection_role": "val_tune"
+    },
+    "rul_regression": {
+      "calibration_role": "val_calib",
+      "fit_role": "train",
+      "selection_role": "val_tune"
+    },
+    "uncertainty": {
+      "bootstrap_draws": 1000,
+      "bootstrap_seed": 42,
+      "resampling_unit": "engine_id"
+    }
+  },
+  "stage": "Stage 2",
+  "subset": "FD003"
+}

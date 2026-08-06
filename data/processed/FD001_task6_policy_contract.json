@@ -1,0 +1,183 @@
+{
+  "action_horizon_cycles": 30,
+  "anomaly_reference": {
+    "primary": "pooled healthy TRAIN-reference CDF",
+    "raw_score_is_probability": false,
+    "score_direction": "larger percentile means more abnormal",
+    "sensitivity": "engine-balanced healthy TRAIN-reference CDF"
+  },
+  "bootstrap": {
+    "draws": 1000,
+    "interval": "95% percentile",
+    "method": "engine-level resampling",
+    "seed": 42
+  },
+  "contract_version": 1,
+  "cost_policy": {
+    "aggregation": "equal-weight mean over engines",
+    "early_burden": "max(0, lead_time - 30)",
+    "early_cost_cap": 1.0,
+    "early_normalized_for_cost": "min(early_normalized_uncapped, 1.0)",
+    "early_normalized_uncapped": "early_burden / 30",
+    "late_delay": "max(0, 30 - lead_time)",
+    "late_normalized": "late_delay / 30",
+    "lead_time": "failure_cycle - tau",
+    "missed_engine_cost": 100.0,
+    "non_missed_total_cost": "5 * late_normalized + 1 * early_normalized_for_cost",
+    "weights": {
+      "c_early": 1.0,
+      "c_late": 5.0,
+      "c_miss": 100.0
+    }
+  },
+  "data_roles": {
+    "candidate_selection": "VAL-TUNE",
+    "final_evaluation": "official TEST sealed",
+    "model_fit": "TRAIN anomaly_fit",
+    "policy_selection": "VAL-CALIB next",
+    "reference_cdf": "TRAIN anomaly_reference"
+  },
+  "latching": {
+    "definition": "after the first persistent trigger, the engine remains alerted",
+    "enabled": true,
+    "tau_recorded_once": true
+  },
+  "official_test_accessed": false,
+  "official_test_status": "SEALED",
+  "persistence": {
+    "cycle_gap_rule": "a cycle gap resets persistence history",
+    "diagnostic_only": [
+      [
+        1,
+        1
+      ]
+    ],
+    "diagnostic_only_selection_eligible": false,
+    "minimum_history_rule": "no alert before n contiguous cycles exist",
+    "selection_eligible_grid": [
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        5,
+        10
+      ]
+    ],
+    "trigger_rule": "trigger when at least m of the last n consecutive observed cycles are raw crossings",
+    "window_type": "trailing_sliding"
+  },
+  "selected_task5_candidates": {
+    "iforest": "iforest_n200_ms_0p5",
+    "lof": "lof_k50",
+    "ocsvm": "ocsvm_nu0p05_gamma_0p01",
+    "pca": "pca_evr0p95"
+  },
+  "selection_scope": {
+    "manual_post_hoc_override": false,
+    "overall": "select the lowest-cost eligible policy across all families",
+    "per_family": "select the lowest-cost eligible policy within each detector family"
+  },
+  "source_artifacts": {
+    "anomaly_preprocessing_bundle": {
+      "path": "artifacts/models/FD001_anomaly_preprocessing_bundle.joblib",
+      "sha256": "c3f841a3f8bb21cf5921ba5d0cd630d49e773a97b334191082cf7fbbbb86a8ce",
+      "size_bytes": 3217
+    },
+    "candidate_manifest": {
+      "path": "data/processed/FD001_anomaly_train_candidates_manifest.json",
+      "sha256": "708e0bc66bd55c03065e3eabee4182ee1cbf6e71d6eb9969502b374b6323e788",
+      "size_bytes": 3211
+    },
+    "crossing_run_summary": {
+      "path": "artifacts/results/FD001_anomaly_crossing_run_summary.csv",
+      "sha256": "ef54a3d8f40af624165f1c8196b12a83fe47c3b2d4485f8f182fb76f1c723133",
+      "size_bytes": 2606
+    },
+    "engine_crossing_burden": {
+      "path": "artifacts/results/FD001_anomaly_engine_crossing_burden.csv",
+      "sha256": "49343efbcbd1562da25bef7a23c9101f9a777c37b05fddbda4a6835b5d4732f0",
+      "size_bytes": 79693
+    },
+    "fleet_trajectory_summary": {
+      "path": "artifacts/results/FD001_anomaly_fleet_trajectory_summary.csv",
+      "sha256": "5cca3d7de826063a630bb59504e77ca98a4e65abbfc928daf01a97ddb84e8785",
+      "size_bytes": 104945
+    },
+    "pca_feature_contributions": {
+      "path": "artifacts/results/FD001_pca_feature_contributions.csv",
+      "sha256": "8f7f643e45ad014366520897c3368f9e4492a7cb1ea5d95a0db575f0ab356b44",
+      "size_bytes": 3305
+    },
+    "pca_group_contributions": {
+      "path": "artifacts/results/FD001_pca_group_contributions.csv",
+      "sha256": "3b4e84fd848117fa494cc58867ee8966f359cac62bb50ccb4069129682bf683d",
+      "size_bytes": 464
+    },
+    "selected_family_bundle": {
+      "path": "artifacts/models/FD001_anomaly_selected_family_bundle.joblib",
+      "sha256": "001c1f43ada038f4541876a8eaa595a62d540ffbb548b34240cc781c3dec29e1",
+      "size_bytes": 11736691
+    },
+    "threshold_sensitivity": {
+      "path": "artifacts/results/FD001_anomaly_threshold_sensitivity.csv",
+      "sha256": "a2bc433df312523b47d938230c86fe6663f8e3822890efe05b029f912d3b2e99",
+      "size_bytes": 5202
+    },
+    "val_tune_bootstrap_ci": {
+      "path": "artifacts/results/FD001_anomaly_val_tune_engine_bootstrap_ci.csv",
+      "sha256": "6e6dbce3c7b800d1c9f5c895261cf109d3264336cd623002b1e3e5d464760e7d",
+      "size_bytes": 760
+    },
+    "val_tune_per_engine_auc": {
+      "path": "artifacts/results/FD001_anomaly_val_tune_per_engine_auc.csv",
+      "sha256": "e9530fab2a483047b299b2fd690120edac7ad560fd9459c2839898f898cf1397",
+      "size_bytes": 14492
+    },
+    "val_tune_proxy_contract": {
+      "path": "data/processed/FD001_anomaly_val_tune_proxy_contract.json",
+      "sha256": "3443268567575776ea29765b01dd4d63f71e5faaef2187146c628b50c4b46f10",
+      "size_bytes": 796
+    },
+    "val_tune_proxy_summary": {
+      "path": "artifacts/results/FD001_anomaly_val_tune_proxy_summary.csv",
+      "sha256": "0c20a694b39cd7058c63cd74f2ddea2d7a6a8cf98c8727ee98cc9ce7b87597ef",
+      "size_bytes": 5480
+    },
+    "within_family_selection_contract": {
+      "path": "data/processed/FD001_anomaly_within_family_selected.json",
+      "sha256": "b53a202f672a0504a95096e36ea6e167eec98802ca3d824ac8bb999c48f324b8",
+      "size_bytes": 6478
+    }
+  },
+  "stage": "pre_val_calib_frozen_contract",
+  "strict_trigger_eligibility": {
+    "failure_cycle_definition": "maximum observed cycle for complete run-to-failure validation trajectories",
+    "rule": "tau < failure_cycle",
+    "trigger_at_failure_is_missed": true
+  },
+  "subset": "FD001",
+  "task": "task6_early_warning_policy",
+  "threshold_grid": [
+    0.9,
+    0.95,
+    0.975,
+    0.99
+  ],
+  "tie_break_cost_tolerance": 1e-12,
+  "tie_break_order": [
+    "lowest mean per-engine total cost",
+    "fewer missed engines",
+    "lower mean raw late-warning delay",
+    "lower mean raw early-warning burden",
+    "lower fraction of engines first triggered while RUL > 125",
+    "persistence order: (2,3), (3,5), (5,10)",
+    "higher percentile cutoff",
+    "frozen family order: iforest, lof, ocsvm, pca"
+  ],
+  "val_calib_accessed": false
+}

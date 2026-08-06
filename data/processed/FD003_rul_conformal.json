@@ -1,0 +1,51 @@
+{
+  "calibration_diagnostic": {
+    "average_width_cycles": 39.06579256227945,
+    "empirical_coverage": 0.9007936507936508
+  },
+  "coverage_target": 0.9,
+  "finite_sample_quantile": {
+    "formula": "ceil((n + 1) * coverage_target)",
+    "n_calibration_rows": 2016,
+    "rank": 1816
+  },
+  "fit_engine_ids": [
+    15,
+    21,
+    52,
+    61,
+    72,
+    75,
+    83,
+    87,
+    92,
+    93
+  ],
+  "fit_role": "official_train/val_calib",
+  "interpretation": "Symmetric finite-sample interval calibrated for the capped RUL target.",
+  "latent_groups": {
+    "diagnostic_only": true,
+    "physical_fault_identity_claimed": false,
+    "used_for_calibration": false
+  },
+  "method": "split conformal absolute residual",
+  "n_fit_engines": 10,
+  "n_fit_rows": 2016,
+  "official_test_status": "sealed",
+  "regression_bundle": {
+    "path": "artifacts/models/FD003_regression_bundle.joblib",
+    "sha256": "07b1ff9c4c812d5933a946f0501040e6878d0460d872771ef0825618c415cf07"
+  },
+  "residual_quantile": 19.95934920634916,
+  "schema_version": 1,
+  "source_selection_contract": {
+    "path": "data/processed/FD003_regression_selection.json",
+    "sha256": "92765df6eceb9e8c8859225f131fdaf0934c45143b1a119e2e7e0dfb6e8b7cf8"
+  },
+  "subset": "FD003",
+  "target": {
+    "cap": 100,
+    "name": "RUL",
+    "unit": "cycles"
+  }
+}

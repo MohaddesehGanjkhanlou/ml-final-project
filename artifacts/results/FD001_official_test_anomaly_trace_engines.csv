@@ -1,0 +1,4 @@
+trace_role,engine_id,observation_end_cycle,virtual_failure_cycle,tau_reconstructed,lead_time_to_virtual_failure,censoring_status
+minimum_lead,41,123,141.0,122.0,19.0,ALERTED_BEFORE_OBSERVATION_END
+median_representative,31,196,204.0,152.0,52.0,ALERTED_BEFORE_OBSERVATION_END
+maximum_lead,93,244,329.0,193.0,136.0,ALERTED_BEFORE_OBSERVATION_END

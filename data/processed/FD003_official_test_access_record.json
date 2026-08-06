@@ -1,0 +1,72 @@
+{
+  "access_completed_utc": "2026-08-06T11:52:54.673046+00:00",
+  "access_mode": "INITIAL_UNSEAL",
+  "access_started_utc": "2026-08-06T11:52:54.636947+00:00",
+  "artifact_type": "official_test_access_record",
+  "artifact_version": 1,
+  "authorization": {
+    "authorized_by": "execution_of_frozen_evaluation_contract",
+    "contract_next_status": "READY_TO_UNSEAL",
+    "contract_status_before_access": "SEALED",
+    "model_refitting_authorized": false,
+    "policy_reselection_authorized": false,
+    "threshold_recalculation_authorized": false
+  },
+  "evaluation_contract": {
+    "path": "data/processed/FD003_official_test_evaluation_contract.json",
+    "sha256": "8daf549329d089998265f2ce1e976cad7501874c8348eccc08cd40650b78a855"
+  },
+  "integrity": {
+    "executed_structural_checks": 25,
+    "failed_structural_checks": 0,
+    "frozen_artifacts_after_access": {
+      "anomaly_policy_bundle": true,
+      "anomaly_policy_selection": true,
+      "classification_bundle": true,
+      "classification_threshold_contract": true,
+      "regression_bundle": true,
+      "rul_conformal_contract": true
+    },
+    "frozen_artifacts_before_access": {
+      "anomaly_policy_bundle": true,
+      "anomaly_policy_selection": true,
+      "classification_bundle": true,
+      "classification_threshold_contract": true,
+      "regression_bundle": true,
+      "rul_conformal_contract": true
+    }
+  },
+  "official_test_lifecycle_status": "UNSEALED_FOR_EVALUATION",
+  "operations": {
+    "model_bundles_loaded": 0,
+    "model_fit_calls": 0,
+    "model_prediction_calls": 0,
+    "official_test_loader_calls": 1,
+    "policy_selection_calls": 0,
+    "threshold_selection_calls": 0
+  },
+  "raw_sources": {
+    "official_rul": {
+      "path": "data/raw/RUL_FD003.txt",
+      "sha256": "df1e0566306b174a2de41c67a3e7a51877889598b78643fc3e5685259091b7cb",
+      "size_bytes": 428
+    },
+    "official_test": {
+      "path": "data/raw/test_FD003.txt",
+      "sha256": "299babd63c8d987cef079c4a425429f33b3a34797d803bbe2ad48c29dbd0d790",
+      "size_bytes": 2826651
+    }
+  },
+  "structural_summary": {
+    "maximum_final_rul": 145,
+    "maximum_observation_end_cycle": 475,
+    "median_final_rul": 77.5,
+    "median_observation_end_cycle": 148.0,
+    "minimum_final_rul": 6,
+    "minimum_observation_end_cycle": 38,
+    "n_engines": 100,
+    "n_final_snapshots": 100,
+    "n_rows": 16596
+  },
+  "subset": "FD003"
+}

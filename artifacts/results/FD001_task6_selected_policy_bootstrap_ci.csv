@@ -1,0 +1,11 @@
+metric,point_estimate,bootstrap_mean,ci_95_lower,ci_95_upper,requested_draws,valid_draws,invalid_draws,n_unique_engines,seed
+mean_total_cost,0.6833333333333333,0.6838033333333333,0.45,0.8866666666666667,1000,1000,0,10,42
+miss_rate,0.0,0.0,0.0,0.0,1000,1000,0,10,42
+mean_miss_component,0.0,0.0,0.0,0.0,1000,1000,0,10,42
+mean_late_component,0.0,0.0,0.0,0.0,1000,1000,0,10,42
+mean_early_component,0.6833333333333333,0.6838033333333333,0.45,0.8866666666666667,1000,1000,0,10,42
+mean_raw_late_delay,0.0,0.0,0.0,0.0,1000,1000,0,10,42
+mean_raw_early_burden,27.7,27.491199999999996,16.397499999999997,39.5025,1000,1000,0,10,42
+mean_lead_time_alerted,57.7,57.4912,46.3975,69.5025,1000,1000,0,10,42
+median_lead_time_alerted,55.5,54.982,38.0,71.0,1000,1000,0,10,42
+healthy_first_trigger_fraction,0.0,0.0,0.0,0.0,1000,1000,0,10,42

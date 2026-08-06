@@ -1,0 +1,14 @@
+{
+  "artifact_count": 15,
+  "artifact_type": "functional_completion_readiness",
+  "artifact_version": 1,
+  "completion_percentage": 100.0,
+  "failed_checks": 0,
+  "next_stage": "BONUS_FD004",
+  "passed_checks": 8,
+  "project_overall_status": "IN_PROGRESS_AFTER_FD003_STAGE_COMPLETION",
+  "status": "FUNCTIONALLY_COMPLETE",
+  "subset": "FD003",
+  "total_checks": 8,
+  "verified_artifacts": 15
+}
