@@ -1,0 +1,275 @@
+{
+  "subset": "FD004",
+  "challenge": "six conditions + two fault modes",
+  "protocol": "same engine split, metrics, horizons, uncertainty, and policy contract",
+  "condition_normalization": {
+    "n_regimes": 6,
+    "selection_role": "validation-tune",
+    "comparison": [
+      {
+        "normalization": "global",
+        "model": "ridge",
+        "MAE": 12.648633727943322,
+        "RMSE": 16.589036528999095,
+        "R2": 0.7121495452468211,
+        "PHM_mean": 4.424284098641968
+      },
+      {
+        "normalization": "condition_aware",
+        "model": "ridge",
+        "MAE": 11.148887632841854,
+        "RMSE": 14.761104492706364,
+        "R2": 0.7720905662303009,
+        "PHM_mean": 3.0782750822905287
+      },
+      {
+        "normalization": "condition_aware",
+        "model": "gbr",
+        "MAE": 7.675456139101908,
+        "RMSE": 11.959110301617658,
+        "R2": 0.8504031888835438,
+        "PHM_mean": 2.9369488287506496
+      },
+      {
+        "normalization": "condition_aware",
+        "model": "rf",
+        "MAE": 7.4462385829791184,
+        "RMSE": 11.794254710980342,
+        "R2": 0.8544991272704145,
+        "PHM_mean": 2.9151903316453147
+      }
+    ],
+    "selected": {
+      "normalization": "condition_aware",
+      "model": "rf",
+      "MAE": 7.4462385829791184,
+      "RMSE": 11.794254710980342,
+      "R2": 0.8544991272704145,
+      "PHM_mean": 2.9151903316453147
+    }
+  },
+  "dedicated_test_metrics": {
+    "MAE": 5.711454486911974,
+    "RMSE": 10.64044133714186,
+    "R2": 0.6181274700433247,
+    "PHM_mean": 3.0753668197117645,
+    "regions": {
+      "early": {
+        "n": 29342,
+        "MAE": 3.000245789699882,
+        "RMSE": 6.570587927389251
+      },
+      "mid": {
+        "n": 11008,
+        "MAE": 12.316801844525424,
+        "RMSE": 16.830885544794445
+      },
+      "near_failure": {
+        "n": 864,
+        "MAE": 13.62884092324109,
+        "RMSE": 18.037522822016477
+      }
+    },
+    "interval_coverage": 0.9571990100451303,
+    "interval_average_width": 32.61639528630902,
+    "ci95": {
+      "MAE": {
+        "low": 5.064620562803613,
+        "high": 6.3253455862215295
+      },
+      "RMSE": {
+        "low": 9.533036847848075,
+        "high": 11.659128300090233
+      },
+      "PHM_mean": {
+        "low": 1.8844088728459887,
+        "high": 4.635865586498766
+      }
+    }
+  },
+  "transfer_comparison": [
+    {
+      "source": "FD001",
+      "training": "source train engines, Ridge/window-15",
+      "MAE": 91.8489805370284,
+      "RMSE": 94.10607707116499,
+      "R2": -28.869948542176655,
+      "PHM_mean": 1832.045277338876
+    },
+    {
+      "source": "FD002",
+      "training": "source train engines, Ridge/window-15",
+      "MAE": 6.6841055002920235,
+      "RMSE": 14.869129341016874,
+      "R2": 0.2542895767551464,
+      "PHM_mean": 26.40166695312053
+    },
+    {
+      "source": "FD003",
+      "training": "source train engines, Ridge/window-15",
+      "MAE": 85.75264824812469,
+      "RMSE": 90.85770533788056,
+      "R2": -26.84342545569854,
+      "PHM_mean": 1709.5645352062716
+    },
+    {
+      "source": "FD004_dedicated",
+      "training": "condition_aware rf",
+      "MAE": 5.711454486911974,
+      "RMSE": 10.64044133714186,
+      "R2": 0.6181274700433247,
+      "PHM_mean": 3.0753668197117645
+    }
+  ],
+  "performance_by_regime": [
+    {
+      "regime": 0,
+      "rows": 6054,
+      "engines": 248,
+      "MAE": 5.6939984997792035,
+      "RMSE": 10.85755488979896,
+      "R2": 0.608014178269082,
+      "PHM_mean": 3.6781816355084187
+    },
+    {
+      "regime": 1,
+      "rows": 10382,
+      "engines": 248,
+      "MAE": 5.96810036825493,
+      "RMSE": 10.910808787106856,
+      "R2": 0.5966546367211165,
+      "PHM_mean": 3.301291148155495
+    },
+    {
+      "regime": 2,
+      "rows": 6107,
+      "engines": 248,
+      "MAE": 6.094570560491889,
+      "RMSE": 10.814696022954687,
+      "R2": 0.5959297879105514,
+      "PHM_mean": 2.761185376233869
+    },
+    {
+      "regime": 3,
+      "rows": 6254,
+      "engines": 248,
+      "MAE": 5.260676134882942,
+      "RMSE": 10.112262664403508,
+      "R2": 0.6602894552923595,
+      "PHM_mean": 2.791769862576735
+    },
+    {
+      "regime": 4,
+      "rows": 6185,
+      "engines": 248,
+      "MAE": 5.507194227979719,
+      "RMSE": 10.326709606816001,
+      "R2": 0.6320746138971294,
+      "PHM_mean": 2.4456456890238596
+    },
+    {
+      "regime": 5,
+      "rows": 6232,
+      "engines": 248,
+      "MAE": 5.5805187776263905,
+      "RMSE": 10.622735721632433,
+      "R2": 0.6281817615601137,
+      "PHM_mean": 3.330848104341246
+    }
+  ],
+  "performance_by_sequence_length": [
+    {
+      "length_band": "short",
+      "rows": 6195,
+      "engines": 83,
+      "MAE": 4.8847138144948214,
+      "RMSE": 8.528162058627785,
+      "R2": 0.18284874598627077,
+      "PHM_mean": 1.7145736846795343
+    },
+    {
+      "length_band": "medium",
+      "rows": 12647,
+      "engines": 82,
+      "MAE": 7.153059540185985,
+      "RMSE": 12.556502354824882,
+      "R2": 0.6608755007666774,
+      "PHM_mean": 4.463333325136612
+    },
+    {
+      "length_band": "long",
+      "rows": 22372,
+      "engines": 83,
+      "MAE": 5.12543979698116,
+      "RMSE": 9.965184391468314,
+      "R2": 0.592400173496302,
+      "PHM_mean": 2.667557999642778
+    }
+  ],
+  "performance_by_fault_behavior_proxy": [
+    {
+      "behavior_cluster": 0,
+      "rows": 8316,
+      "engines": 43,
+      "MAE": 4.567909957280737,
+      "RMSE": 8.576978848347206,
+      "R2": 0.7185866133128327,
+      "PHM_mean": 1.3521462207469257
+    },
+    {
+      "behavior_cluster": 1,
+      "rows": 32898,
+      "engines": 205,
+      "MAE": 6.000521187271064,
+      "RMSE": 11.101481436264859,
+      "R2": 0.5961863669262891,
+      "PHM_mean": 3.510964804421826
+    }
+  ],
+  "fault_proxy_caution": "clusters are training-derived behavior proxies; official per-engine fault labels are unavailable",
+  "anomaly_threshold_stability": [
+    {
+      "regime": 0,
+      "rows": 6054,
+      "mean_anomaly_percentile": 0.5815563504449736,
+      "crossing_rate": 0.09844730756524611,
+      "healthy_false_alert_rate": 0.058803649881716796
+    },
+    {
+      "regime": 1,
+      "rows": 10382,
+      "mean_anomaly_percentile": 0.5969894290958933,
+      "crossing_rate": 0.08312463879791948,
+      "healthy_false_alert_rate": 0.05391047712739793
+    },
+    {
+      "regime": 2,
+      "rows": 6107,
+      "mean_anomaly_percentile": 0.5636015011979846,
+      "crossing_rate": 0.06713607335844113,
+      "healthy_false_alert_rate": 0.04694286668894086
+    },
+    {
+      "regime": 3,
+      "rows": 6254,
+      "mean_anomaly_percentile": 0.6079673759751614,
+      "crossing_rate": 0.10201471058522546,
+      "healthy_false_alert_rate": 0.05478331970564186
+    },
+    {
+      "regime": 4,
+      "rows": 6185,
+      "mean_anomaly_percentile": 0.589497920131823,
+      "crossing_rate": 0.09005658852061439,
+      "healthy_false_alert_rate": 0.054767403497195645
+    },
+    {
+      "regime": 5,
+      "rows": 6232,
+      "mean_anomaly_percentile": 0.600568872068031,
+      "crossing_rate": 0.08584724005134788,
+      "healthy_false_alert_rate": 0.0522608125819135
+    }
+  ],
+  "dashboard_threshold_policy": "global validation-selected thresholds; regime results are diagnostic, not post-test retuning"
+}
