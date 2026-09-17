@@ -543,7 +543,7 @@ The Streamlit application supports:
 # 📁 Repository Structure
 
 ```text
-ml-final-project/
+jet-engine-hospital/
 │
 ├── app/
 │   ├── artifacts/
@@ -589,8 +589,8 @@ ml-final-project/
 Clone the repository:
 
 ```bash
-git clone https://github.com/MohaddesehGanjkhanlou/ml-final-project.git
-cd ml-final-project
+git clone https://github.com/MohaddesehGanjkhanlou/jet-engine-hospital.git
+cd jet-engine-hospital
 ```
 
 ---
@@ -641,7 +641,7 @@ Use the following configuration:
 
 ```text
 Repository:
-MohaddesehGanjkhanlou/ml-final-project
+MohaddesehGanjkhanlou/jet-engine-hospital
 
 Branch:
 main
